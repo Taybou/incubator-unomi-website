@@ -102,196 +102,26 @@
       <!-- Wrap the rest of the page in another container to center all the content. -->
 
       <div class="container">
-
         <!-- CONTRIBUTE -->
         <div class="row mb-5 mt-5">
             <div class="col">
-              <h2 class="pb-3 mb-4 font-italic border-bottom"><i class="fas fa-code-branch"></i> Contribute</h2>
-              <p>There are many ways you can help make Karaf a better piece of software - please dive in and help !</p>
-                <ul class="community">
-                    <li>Try browsing the <a href="documentation.html">documentation</a> - if something's confusing or not clear, let us know.</li>
-                    <li><a href="download.html">Download</a> the code & try it out and see what you think.</li>
-                    <li><a href="https://github.com/apache/karaf">Browse the source code</a>. Got an itch to scratch, want to tune some operation or add some feature ?</li>
-                </ul>
-              <p>
-                If you'd rather have a more gentle introduction to working on the Karaf project, try looking at the test coverage report and help us get it even more green by supplying more test cases to get us closer to 100% coverage.
-              </p>              
-            </div>
-        </div>
+              <h2 class="pb-3 mb-4 font-italic border-bottom"><i class="fas fa-code-branch"></i> Source repository</h2>
+              <p>This project uses Git to manage its source code. Instructions on Git use can be found at <a href="https://git-scm.com/doc">https://git-scm.com/doc</a></p>
+              
+              <h4 class="pb-2 pt-5">Web Browser Access</h4>
+              <p>The following is a link to a browsable version of the source repository:</p>
+              <a href="https://git-wip-us.apache.org/repos/asf/incubator-unomi.git">https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</a>
 
-        <div class="row mb-5 mt-5">
-            <div class="col">
-              <h4 class="pb-3 mb-4">Report bugs and feature requests</h4>
-              <p>Did you find a bug or want something implemented? Please report an issue in our <a href="https://issues.apache.org/jira/browse/KARAF">issue tracker</a>. When creating a bug make sure you document the steps to reproduce the issue and provide all necessary information like OS, versions your use, logs. When creating a feature request document your requirements first. Try to not directly describe the solution.</p>
-                
-              <p>If you want to dive into development yourself then you can also browse for open issues or features that need to be implemented. Take ownership of an issue and try fix it. Before doing a bigger change describe the concept/design of what you plan to do. If unsure if the design is good or will be accepted discuss it on the dev list.</p>             
-            </div>
-        </div>
+              <h4 class="pb-2 pt-5">Anonymous Access</h4>
+              <p>The source can be checked out anonymously from Git with this command (See <a href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a>):</p>
+              <code>$ git clone https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</code>
 
-        <div class="row mb-5 mt-5">
-            <div class="col">
-              <h4 class="pb-3 mb-4">Provide changes in a Pull Request</h4>
-              <p>The best way to provide changes is to fork karaf repo on github and provide a pull request with your changes. To make it easy to apply your changes please use the following conventions :</p>
-              <ul class="community">
-                    <li>Every pull request should have a matching jira issue</li>
-                    <li>Do the change in a branch that is named like the jira issue id e.g KARAF-1234.<br/>To create this branch you can use :<br/>
-                        <code>git clone http://github.com/apache/karaf</code><br/>
-                        <code>git fetch --all</code><br/>
-                        <code>git checkout -b my-branch origin/master</code><br/>
-                        Don't forget to periodically rebase your branch:<br/>
-                        <code>git pull --rebase</code><br/>
-                        <code>git push GitHubUser my-branch --force</code>
-                    </li>
-                    <li>Every commit in the branch should start with the jira issue id like this "[KARAF-123] More details"</li>
-                    <li>You can squash your commits into one and force push your branch (not mandatory) using <code>git rebase -i apache/master</code></li>
-                    <li>Test that your change works by adapting or adding tests.</li>
-                    <li><a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">Follow the boy scout rule to "Always leave the campground cleaner than you found it."</a></li>
-                    <li>Make sure you do a build before doing a PR. The build has to be successfull :<br/>
-                        <code>
-                            mvn clean verify -Prelease -fae -T 1C
-                        </code>
-                    </li>
-                    <li>If your PR has conflicts with the master then rebase the branch. PRs with conflicts are unlikely to be applied</li>
-                    <li>Do not change too much in a PR. The smaller the PR the easier it is to apply and the faster it will be done</li>
-                    <li>Sometimes PRs get lost. Do not hesitate to ask on the dev list if your PR seems to be ignored</li>
-              </ul>            
-            </div>
-        </div>
+              <h4 class="pb-2 pt-5">Developer Access</h4>
+              <p>Only project developers can access the Git tree via this method (See <a href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a>):</p>
+              <code>$ git clone https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</code>
 
-        <div class="row mb-5 mt-5">
-            <div class="col">
-              <h4 class="pb-3 mb-4">Review pull requests</h4>
-              <p>Anyone can review pull requests but the merge can be done only by a committer.<br/>
-                If you want to review a PR and if you are a committer, use the "Reviewer" entry on the right menu on GitHub.<br/>
-                When reviewing check if the changes are done in a clean way and are tested with a unit and possibly integration test. Check that the build does not report more test failures than before. If you are not a committer then write a comment if you recommend a merge or not. Provide good instructions for the contributor how to improve his PR if it is not yet ok. Make sure you do a review timely. By commenting that you do a review you kind of block others from applying the change.</p>
-              <p class="alert alert-primary" role="alert">
-                NB: Jenkins performs a build for each pull request. You can trigger a new build on a pull request using "retest this please" in a PR comment.
-              </p>      
-            </div>
-        </div>
-
-        <div class="row mb-5 mt-5">
-            <div class="col">
-              <h4 class="pb-3 mb-4">Apply pull requests</h4>
-              <p>This can obviously only be done by a committer. Do the following steps.</p>
-                
-                <ul class="community">
-                    <li>As one time config, you can rename your git remote and add apache one :<br/>
-                        <code>> git remote add apache https://gitbox.apache.org/repos/asf/karaf.git</code><br/><br/>
-                        We recommand renaming <code>origin</code> as <code>github</code> :<br/>
-                        <code>> git remote rename origin github</code><br/><br/>
-                        For <code>github</code> remote, add an additional fetch reference, which will cause every pull request to be made available as a remote branch in your workspace :<br/>
-                        <code>> git config --local --add remote.github.fetch '+refs/pull/*/head:refs/remotes/github/pr/*'</code><br/><br/>
-                        You can confirm your configuration with the following command :<br>
-                        <code>> git remote -v</code><br>
-                        <code>apache    https://gitbox.apache.org/repos/asf/karaf.git (fetch)</code><br>
-                        <code>apache    https://gitbox.apache.org/repos/asf/karaf.git (push)</code><br>
-                        <code>github    https://github.com/apache/karaf.git (fetch)</code><br>
-                        <code>github    https://github.com/apache/karaf.git (push)</code><br>
-                        <code>username  git@github.com:username/karaf.git (fetch)</code><br>
-                        <code>username  git@github.com:username/karaf.git (push)</code>
-                    </li>
-                    
-                    <li>Checkout the PR :<br/>
-                        <code>> git fetch --all</code><br>
-                        <code>> git checkout -b pr-xxx github/pr/xxx</code>
-                    </li>
-                    <li>Review the PR, amend, squash the commits, requesting changes, ... When done, add <code>LGTM</code> comment to approve the PR (or click on the "Approve" button on GitHub) :<br/>
-                        <code>> git rebase -i apache/master</code>
-                    </li>
-                    <li>Merge the PR (it automatically closes the PR) :<br/>
-                        Use the merge button on github (for committer).
-                    </li>
-                    <li>Eventually backport commits to bugfix branches using <code>git cherry-pick</code></li>
-                    <li>Make sure you document the fix in jira by adding the fix versions and resolve the jira issue.</li>
-                    <li>You can delete the PR branch : <br>
-                        <code>> git branch -D pr-xxx</code>.</li>
-                </ul>      
-            </div>
-        </div>
-
-        <div class="row mb-5 mt-5">
-            <div class="col">
-              <h4 class="pb-3 mb-4">Improve the karaf website</h4>
-              <p>The content of the website <strong>https://karaf.apache.org</strong> is stored in the git repo <a href="https://github.com/apache/karaf-site">karaf site</a>. See the <a href="https://github.com/apache/karaf-site/blob/trunk/README.md">README.md</a> on top level for how to test and publish the website.</p>
-            </div>
-        </div>
-      </div><!-- /.container -->
-
-
-      <div class="container">
-
-        <!-- CONTRIBUTE -->
-        <div class="row mb-5 mt-5">
-            <div class="col">
-              <h2 class="pb-3 mb-4 font-italic border-bottom"><i class="fas fa-shipping-fast"></i> Support</h2>
-              <p>If you are experiencing problems using Karaf then please report your problem to our <a href="https://issues.apache.org/jira/browse/KARAF">issue tracker</a>.
-              You may also find it useful to discuss your issues with the community on the mailing lists or IRC.</p>
-            </div>
-        </div>     
-
-        <div class="row mb-5 mt-5">
-            <div class="col">
-              <h4 class="pb-3 mb-4">How to get help</h4>
-              <p>Whenever you are reporting a problem please be sure to include as much information as possible; the more we know the more chance of a quicker resolution :</p>
-                <ul class="community">
-                    <li>which Karaf version you're using</li>
-                    <li>what platform and JDK?</li>
-                    <li>the particular OSGi container being used - if so what version</li>
-                    <li>stack traces generally really help! If in doubt include the whole thing; often exceptions get wrapped in other exceptions and the exception right near the bottom explains the actual error, not the first few lines at the top. It's very easy for us to skim-read past unnecessary parts of a stack trace</li>
-                    <li>log output can be useful too; sometimes enabling DEBUG logging can help</li>
-                    <li>your code & configuration files are often useful. Be careful not to send us anything of a sensitive nature</li>
-                    <li>did it work before, what have you changed to break it?</li>
-                    <li>try upgrading to the latest release and see if it's fixed in that release</li>
-                    <li>try the latest SNAPSHOT to see if it's fixed in that release</li>
-                    <li>search the user mailing list to see if has been discussed before</li>
-                    <li>check the issue tracker to see if the issue already have been reported</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row mb-5 mt-5">
-            <div class="col">
-              <h4 class="pb-3 mb-4">How to get help faster</h4>
-              <p>We may be able to help you much more quickly if you try the following :</p>
-                <ul class="community">
-                    <li>provide us with a JUnit test case that demonstrates your issue. e.g. if you think you've found a bug, can you create a test case to demonstrate the bug ?</li>
-                    <li>submit a patch fixing the bug! (we also buy you beer when we meet you if you submit bug fixes :) )</li>
-                    <li>for memory leak or performance related issues, if you can run a profiler on your test case and attach the output as a file (or zipped file if it's huge) to the JIRA we can normally fix things much quickly. E.g. you could run jmap/jhat, JProfiler or YourKit on your code and send us the output. To find memory leaks it's quicker to resolve if you can tell us what classes are taking up all of the RAM; we can normally figure out what's wrong from that</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row mb-5 mt-5">
-            <div class="col">
-              <h4 class="pb-3 mb-4">Commercial Support</h4>
-              <p>Apache Karaf is a widely used project. As such, several companies have built products and services around Karaf.
-                Companies are definitely encouraged to update this page directly or send a mail to the Karaf PMC with a description of your offerings and we can update the page. The products and services listed on this page are provided for information use only to our users. The Karaf PMC does not endorse or recommend any of the products or services on this page :</p>
-
-                <table class="table table-striped table-sm">
-                    <thead class="thead-dark">
-                        <th>Organization</th>
-                        <th></th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="https://www.codecentric.de/">Codecentric</a></td>
-                            <td>provides consulting and training for Apache Karaf and related technologies e.g. Apache Camel, Apache ActiveMQ and CXF for the DACH region.</td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.open3m.fr">Open3m</a></td>
-                            <td>contributes and commits to the Apache Karaf project. Provides consulting, training and support for Apache Karaf and related projects like Apache Camel, Apache ActiveMQ, Apache CXF.</td>
-                        </tr>
-                        <tr>
-                            <td><a href="http://www.savoirtech.com/">Savoir Technologies, Inc</a></td>
-                            <td>contributes and commits to the Apache Karaf project, while providing enterprise consulting, training and support for Karaf and a host of other Apache service containers. Savoir can provide best practice mentoring for developing with Karaf, as well as architectural/design reviews, troubleshooting and SOA infrastructure implementations.</td>
-                        </tr>
-                        <tr>
-                            <td><a href="http://www.talend.com/">Talend</a></td>
-                            <td>uses and contributes on Apache Karaf. The Talend Runtime is based on Karaf. Talend has a dedicated team for the Apache projects. This team provides consulting, training, specific development, and support on Karaf (and other Apache projects).</td>
-                        </tr>
-                    </tbody>
-                </table>
+              <h4 class="pb-2 pt-5">Access from Behind a Firewall</h4>
+              <p>Refer to the documentation of the SCM used for more information about access behind a firewall.</p>     
             </div>
         </div>
       </div>
@@ -301,164 +131,176 @@
 
         <!-- CONTRIBUTE -->
         <div class="row mb-5 mt-5">
-            <div class="col">
-              <h2 class="pb-3 mb-4 font-italic border-bottom"><i class="fas fa-users-cog"></i> Team</h2>
+          <div class="col">
+            <h2 class="pb-3 mb-4 font-italic border-bottom"><i class="fas fa-users-cog"></i> Project Team</h2>
 
-              <table class="table table-striped table-sm">
-                <thead class="thead-dark">
-                    <th>Name</th>
-                    <th>ID</th>
-                    <th>PMC</th>
-                    <th>Organization</th>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>David Bosschaert</td>
-                    <td>davidb</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="http://iocanel.blogspot.com/">Ioannis Canellos</a></td>
-                    <td>iocanel</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td><a href="http://www.jboss.org/">JBoss</a></td>
-                </tr>
-                <tr>
-                    <td>Hiram Chirino</td>
-                    <td>chirino</td>
-                    <td></td>
-                    <td><a href="http://www.jboss.org/">JBoss</a></td>
-                </tr>
-                <tr>
-                    <td>Chris Custine</td>
-                    <td>ccustine</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Andrea Cosentino</td>
-                    <td>acosentino</td>
-                    <td></td>
-                    <td><a href="http://www.redhat.com/">RedHat</a></td>
-                </tr>
-                <tr>
-                    <td><a href="http://blog.code-house.org/">Lukasz Dywicki</a></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="http://freemanfang.blogspot.com/">Freeman Fang</a></td>
-                    <td>ffang</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td><a href="http://www.jboss.org/">JBoss</a></td>
-                </tr>
-                <tr>
-                    <td>Jarek Gawor</td>
-                    <td>jgawor</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td><a href="http://www.ibm.com">IBM</a></td>
-                </tr>
-                <tr>
-                    <td>Christoph Gritschenberger</td>
-                    <td>christophg</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="http://icodebythesea.blogspot.com/">Jamie Goodyear</a></td>
-                    <td>jgoodyear</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td><a href="http://www.savoirtech.com/">Savoir Technologies</a></td>
-                </tr>
-                <tr>
-                    <td>David Jencks</td>
-                    <td>djencks</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td><a href="http://www.ibm.com">IBM</a></td>
-                </tr>
-                <tr>
-                    <td>Alex Karasulu</td>
-                    <td>akarasulu</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="http://cmoulliard.blogspot.com/">Charles Moulliard</a></td>
-                    <td>cmoulliard</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td><a href="http://www.jboss.org/">JBoss</a></td>
-                </tr>
-                <tr>
-                    <td><a href="http://notizblog.nierbeck.de/">Achim Nierbeck</a></td>
-                    <td>anierbeck</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td><a href="http://codecentric.de/">Codecentric</a></td>
-                </tr>
-                <tr>
-                    <td><a href="http://gnodet.blogspot.com/">Guillaume Nodet</a></td>
-                    <td>gnodet</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td><a href="http://www.jboss.org/">JBoss</a></td>
-                </tr>
-                <tr>
-                    <td><a href="http://blog.nanthrax.net">Jean-Baptiste Onofr&eacute;</a></td>
-                    <td>jbonofre</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td><a href="http://www.talend.com">Talend</a></td>
-                </tr>
-                <tr>
-                    <td>Andreas Pieber</td>
-                    <td>pieber</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>James Strachan</td>
-                    <td>jstrachan</td>
-                    <td></td>
-                    <td><a href="http://www.jboss.org/">JBoss</a></td>
-                </tr>
-                <tr>
-                    <td>Christian Schneider</td>
-                    <td>cschneider</td>
-                    <td></td>
-                    <td><a href="http://www.talend.com">Talend</a></td>
-                </tr>
-                <tr>
-                    <td>Adrian Trenaman</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Gert Vanthienen</td>
-                    <td>gertv</td>
-                    <td><img src="images/check.gif"/></td>
-                    <td><a href="http://www.jboss.org/">JBoss</a></td>
-                </tr>
-                <tr>
-                    <td>Brian Topping</td>
-                    <td>btopping</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Heath Kesler</td>
-                    <td>hkesler</td>
-                    <td></td>
-                    <td><a href="http://www.savoirtech.com/">Savoir Technologies</a></td>
-                </tr>
-                <tr>
-                    <td>Fran&ccedil;ois Papon</td>
-                    <td>fpapon</td>
-                    <td></td>
-                    <td><a href="https://www.open3m.io">Open3m</a></td>
-                </tr>
-                </tbody>
+            <p>A successful project requires many people to play many roles. Some members write code or documentation, while others are valuable as testers, submitting patches and suggestions.</p>
+
+            <p>The project team is comprised of Members and Contributors. Members have direct access to the source of a project and actively evolve the code-base. Contributors improve the project through submission of patches and suggestions to the Members. The number of Contributors to the project is unbounded. Get involved today. All contributions to the project are greatly appreciated.</p>
+
+            <h4 class="pb-3 pt-3">Members</h4>
+            <p>The following is a list of developers with commit privileges that have directly contributed to the project in one way or another.</p>
+
+            <table class="table table-striped table-sm">
+              <thead class="thead-dark">
+                  <th>Image</th>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Organization</th>
+                  <th>Organization URL</th>
+                  <th>Roles</th>
+                  <th>Time Zone</th>
+              </thead>
+              <tbody>
+              <tr> 
+                <td><img src="http://www.gravatar.com/avatar/27790393b874159fe05609ca7ed812f9?d=mm&amp;s=60" alt="" /></td> 
+                <td><a name="jbonofre"></a>jbonofre</td> 
+                <td>Jean-Baptiste Onofr&eacute;</td> 
+                <td><a class="externalLink" href="mailto:jbonofre@apache.org">jbonofre@apache.org</a></td> 
+                <td>Talend</td> 
+                <td><a class="externalLink" href="http://www.talend.com">http://www.talend.com</a></td> 
+                <td>champion, committer, PPMC</td> 
+                <td>+1</td> 
+              </tr> 
+              <tr> 
+                <td><img src="http://www.gravatar.com/avatar/4d3eed1c656ec68693eb61d8ccc6a3af?d=mm&amp;s=60" alt="" /></td> 
+                <td><a name="shuber"></a>shuber</td> 
+                <td>Serge Huber</td> 
+                <td><a class="externalLink" href="mailto:shuber@apache.org">shuber@apache.org</a></td> 
+                <td>Jahia</td> 
+                <td><a class="externalLink" href="http://www.jahia.com">http://www.jahia.com</a></td> 
+                <td>committer, PPMC</td> 
+                <td>+1</td> 
+              </tr> 
+              <tr> 
+               <td><img src="http://www.gravatar.com/avatar/505b92f0f422152656b53018929316f4?d=mm&amp;s=60" alt="" /></td> 
+               <td><a name="bdelacretaz"></a>bdelacretaz</td> 
+               <td>Bertrand Delacretaz</td> 
+               <td><a class="externalLink" href="mailto:bdelacretaz@apache.org">bdelacretaz@apache.org</a></td> 
+               <td>Adobe</td> 
+               <td>-</td> 
+               <td>Mentor, PPMC</td> 
+               <td>+1</td> 
+              </tr> 
+              <tr> 
+               <td><img src="http://www.gravatar.com/avatar/b103ce8281c7eef619e5e4bfcfccf639?d=mm&amp;s=60" alt="" /></td> 
+               <td><a name="rvs"></a>rvs</td> 
+               <td>Roman Shaposhnik</td> 
+               <td><a class="externalLink" href="mailto:rvs@apache.org">rvs@apache.org</a></td> 
+               <td>Pivotal</td> 
+               <td>-</td> 
+               <td>Mentor, PPMC</td> 
+               <td>-</td> 
+              </tr> 
+              <tr> 
+               <td><img src="http://www.gravatar.com/avatar/6f919a5883b854b9ae41023ef281ef85?d=mm&amp;s=60" alt="" /></td> 
+               <td><a name="mattmann"></a>mattmann</td> 
+               <td>Chris Mattmann</td> 
+               <td><a class="externalLink" href="mailto:mattmann@apache.org">mattmann@apache.org</a></td> 
+               <td>NASA JPL</td> 
+               <td>-</td> 
+               <td>Mentor, PPMC</td> 
+               <td>-</td> 
+              </tr> 
+              <tr> 
+               <td><img src="http://www.gravatar.com/avatar/9bbc37f4660389c1c54aee53b05a2a65?d=mm&amp;s=60" alt="" /></td> 
+               <td><a name="draier"></a>draier</td> 
+               <td>Thomas Draier</td> 
+               <td><a class="externalLink" href="mailto:draier@apache.org">draier@apache.org</a></td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>committer, PPMC</td> 
+               <td>-</td> 
+              </tr> 
+              <tr> 
+               <td><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=blank&amp;f=y&amp;s=60" alt="" /></td> 
+               <td>-</td> 
+               <td>Sergiy Shyrkov</td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>committer, PPMC</td> 
+               <td>-</td> 
+              </tr> 
+              <tr> 
+               <td><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=blank&amp;f=y&amp;s=60" alt="" /></td> 
+               <td>-</td> 
+               <td>Kevan Jahanshahi</td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>committer, PPMC</td> 
+               <td>-</td> 
+              </tr> 
+              <tr> 
+               <td><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=blank&amp;f=y&amp;s=60" alt="" /></td> 
+               <td>-</td> 
+               <td>C&eacute;dric Mailleux</td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>committer, PPMC</td> 
+               <td>-</td> 
+              </tr> 
+              <tr> 
+               <td><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=blank&amp;f=y&amp;s=60" alt="" /></td> 
+               <td>-</td> 
+               <td>R&eacute;gis Mora</td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>committer, PPMC</td> 
+               <td>-</td> 
+              </tr> 
+              <tr> 
+               <td><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=blank&amp;f=y&amp;s=60" alt="" /></td> 
+               <td>-</td> 
+               <td>Quentin Lamerand</td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>committer, PPMC</td> 
+               <td>-</td> 
+              </tr> 
+              <tr> 
+               <td><img src="http://www.gravatar.com/avatar/1a18e08c27af0044a1c2218ceea839c3?d=mm&amp;s=60" alt="" /></td> 
+               <td><a name="metacosm"></a>metacosm</td> 
+               <td>Chris Laprun</td> 
+               <td><a class="externalLink" href="mailto:metacosm@apache.org">metacosm@apache.org</a></td> 
+               <td>Jahia</td> 
+               <td><a class="externalLink" href="http://www.jahia.com">http://www.jahia.com</a></td> 
+               <td>committer, PPMC</td> 
+               <td>+1</td> 
+              </tr> 
+              <tr> 
+               <td><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=blank&amp;f=y&amp;s=60" alt="" /></td> 
+               <td>-</td> 
+               <td>David Griffon</td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>committer, PPMC</td> 
+               <td>-</td> 
+              </tr> 
+              <tr> 
+               <td><img src="http://www.gravatar.com/avatar/8a23a295ccfaa914c8e40d5b36893c3c?d=mm&amp;s=60" alt="" /></td> 
+               <td><a name="amidani"></a>amidani</td> 
+               <td>Abdelkader Midani</td> 
+               <td><a class="externalLink" href="mailto:amidani@apache.org">amidani@apache.org</a></td> 
+               <td>-</td> 
+               <td>-</td> 
+               <td>committer, PPMC</td> 
+               <td>+1</td> 
+              </tr> 
+              </tbody>
             </table>
-        </div>     
+
+            <h4 class="pb-3 pt-5">Contributors</h4>
+            <p>There are no contributors listed for this project. Please check back again later.</p>  
+          </div>         
+        </div> 
+      </div>    
     </main>
 
     <!-- FOOTER -->
@@ -490,8 +332,8 @@
               <li><a href="issue-tracking.html" title="Issues">Issues</a></li>
               <li><a href="team-list.html" title="Team">Team</a></li>
               <li><a href="maturity-model-report.html" title="Maturity model report card">Maturity model report card</a></li>
-              <li><a href="http://www.apache.org/foundation/sponsorship.html" title="Sponsorship">Sponsorship</a></li>
-              <li><a href="http://www.apache.org/foundation/thanks.html" title="Thanks">Thanks</a></li>
+              <li><a href="https://www.apache.org/foundation/sponsorship.html" title="Sponsorship">Sponsorship</a></li>
+              <li><a href="https://www.apache.org/foundation/thanks.html" title="Thanks">Thanks</a></li>
             </ul>
           </div>
 
