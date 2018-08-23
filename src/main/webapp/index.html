@@ -19,7 +19,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top border-bottom box-shadow">
+      <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top border-bottom box-shadow">
         <div class="container">
           <a class="navbar-brand" href="index.html"><img src="images/unomi-86x20.png"/></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,11 +28,8 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
             <div>
               <ul class="navbar-nav mr-auto align-items-center text-uppercase">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="news.html">News</a>
+                  <a class="nav-link" href="get-started.html">Get started</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="use-cases.html">Use cases</a>
@@ -42,6 +39,9 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="documentation.html">Documentation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contribute.html">Contribute</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="community.html">Community</a>
@@ -60,51 +60,18 @@
 
       <div class="container-fluid product pt-5 pb-5 mx-auto">
         <div class="row pt-5 pb-5">
-          <div class="col pt-5 pb-5 mx-auto text-center">
-            <h1 class="display-4 text-uppercase">The Open Source Customer Data Platform</h1>
-            <p class="lead">Apache Unomi is a Java Open Source customer data platform, a Java server designed to manage customers, <br>leads and visitors data and help personalize customers experiences <br>while also offering features to respect visitor privacy rules (such as <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">GDPR</a>)</p>
+          <div class="container">
+            <div class="col pt-5 mx-auto text-left">
+              <h1 class="display-5">Apache Unomi: The Open Source Customer Data Platform</h1>
+              <p class="lead">Apache Unomi is a Java Open Source customer data platform, a Java server designed to manage customers, <br>leads and visitors data and help personalize customers experiences while also offering features to respect visitor privacy rules (such as GDPR)</p>
+              <div class="pt-4">
+                <a class="btn btn-primary btn-lg" href="get-started.html">Learn more</a>&nbsp;&nbsp;
+                <a class="btn btn-primary btn-lg" href="download.html">Download Unomi 1.2.0-incubating</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <!--<div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-          <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container">
-              <div class="carousel-caption">
-                <p><strong>Karaf Container 4.2.0 has been released ! (9/4/18)</strong> - This is the first GA release on the 4.2.x series. We invite users to upgrade to this new stable series, bringing a lot of fixes, improvements and new features. (<a href="news.html">Release Notes</a>)</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container">
-              <div class="carousel-caption">
-                <p><strong>Karaf Container 3.0.9 has been released! (2/3/18)</strong> - This is an update patch for Apache Karaf 3.0.x, containing minor fixes and dependency upgrades. (<a href="news.html">Release Notes</a>)</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container">
-              <div class="carousel-caption">
-                <p><strong>Karaf Container 4.1.5 has been released! (15/2/18)</strong> - This is an update patch for Apache Karaf 4.1.x, containing bug fixes and improvements. (<a href="news.html">Release Notes</a>)</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container">
-              <div class="carousel-caption">
-                <p><strong>Karaf Decanter 2.0.0 has been released! (6/2/18)</strong> - This is a new Decanter series, providing new features and bug fixes. It's designed to work specifically on Apache Karaf 4.x. (<a href="news.html">Release Notes</a>)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>-->
 
 
       <!-- Marketing messaging and featurettes
@@ -125,9 +92,6 @@
           </div><!-- /.col-lg-8 -->
         </div><!-- /.row -->
 
-
-        <!-- START THE FEATURETTES -->
-
         <hr class="featurette-divider">
 
         <div class="row featurette">
@@ -138,9 +102,7 @@
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
+        <div class="row featurette pt-5">
           <div class="col-md-12">
             <h2 class="featurette-heading">The <span class="text-muted">Apache Unomi</span> advantage ?</h2>
             <p>Each organization is unique and will always have specific needs, this is why Apache Unomi has been designed to be extended and to ease the integration of external data. The embedded features such as segmentation, scoring and built-in privacy will be appreciated by business users while horizontal scalability and open source positioning will be loved by developers and architects. </p> 
@@ -148,9 +110,7 @@
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
+        <div class="row featurette pt-5">
           <div class="col-md-12">
             <h2 class="featurette-heading">Business cases based on <span class="text-muted">Apache Unomi</span> ?</h2>
             <ul> 
@@ -162,9 +122,7 @@
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
+        <div class="row featurette pt-5">
           <div class="col-md-12">
             <h2 class="featurette-heading"><span class="text-muted">Apache Unomi</span> logical architecture</h2>
             <p>All communication is done using HTTP REST requests and JSON data formats.</p>
@@ -177,9 +135,7 @@
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
+        <div class="row featurette pt-5">
           <div class="col-md-6">
             <h2>For developers</h2>
             <ul> 
@@ -204,9 +160,7 @@
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
+        <div class="row featurette pt-5">
           <div class="col-md-12">
             <h2 class="featurette-heading">News</h2>
             <ul> 
@@ -223,9 +177,7 @@
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
+        <div class="row featurette pt-5">
           <div class="col-md-12">
             <h2 class="featurette-heading">Articles &amp; slides</h2>
             <ul> 
@@ -236,29 +188,7 @@
           </div>
         </div>
 
-        <hr class="featurette-divider" id="quickstart">
-
-        <div class="row featurette">
-          <div class="col-md-12">
-            <h2 class="featurette-heading">5 Minutes Quick start !</h2>
-            <ol style="list-style-type: decimal"> 
-              <li>Install JDK 8 (see <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a> and make sure you set the JAVA_HOME variable <a href="https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/">https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/</a></li> 
-              <li>Download ElasticSearch here : <a href="https://www.elastic.co/downloads/elasticsearch">https://www.elastic.co/downloads/elasticsearch</a> (use version 5.1.2 for Unomi &lt;= 1.2, 5.6.3 for Unomi &gt;= 1.3)</li> 
-              <li>Uncompress it and change the <code>config/elasticsearch.yml</code> to include the following config : <code>cluster.name: contextElasticSearch</code></li> 
-              <li>Launch ElasticSearch using : <code>bin/elasticsearch</code></li> 
-              <li>Download Apache Unomi here : <a href="http://unomi.incubator.apache.org/download.html">http://unomi.incubator.apache.org/download.html</a></li> 
-              <li>Start it using : <code>./bin/karaf</code></li> 
-              <li>Start the Apache Unomi packages using <code>unomi:start</code> in the Apache Karaf Shell</li> 
-              <li>Wait for startup to complete</li> 
-              <li>Try accessing <a href="https://localhost:9443/cxs/cluster">https://localhost:9443/cxs/cluster</a> with username/password: karaf/karaf . You might get a certificate warning in your browser, just accept it despite the warning it is safe.</li> 
-              <li>Request your first context by simply accessing : <a href="http://localhost:8181/context.js?sessionId=1234">http://localhost:8181/context.js?sessionId=1234</a></li> 
-            </ol>
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette mb-5">
+        <div class="row featurette mb-5 pt-5">
           <div class="col-md-7">
             <h2 class="featurette-heading">Disclaimer</span></h2>
             <p>
@@ -298,8 +228,7 @@
 
             <h5>Documentation</h5>
             <ul class="list-unstyled text-small">
-              <li>
-              <a href="main.html" title="Main documentation">Main documentation</a></li>
+              <li><a href="main.html" title="Main documentation">Main documentation</a></li>
               <li><a href="usecases.html" title="More use cases">More use cases</a></li>
               <li><a href="rest-api-doc/index.html" title="REST API documentation">REST API documentation</a></li>
               <li><a href="unomi-api/apidocs/index.html" title="API Javadoc">API Javadoc</a></li>

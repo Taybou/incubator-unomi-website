@@ -19,7 +19,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top border-bottom box-shadow">
+      <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top border-bottom box-shadow">
         <div class="container">
           <a class="navbar-brand" href="index.html"><img src="images/unomi-86x20.png"/></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,10 +29,7 @@
             <div>
               <ul class="navbar-nav mr-auto align-items-center text-uppercase">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="news.html">News</a>
+                  <a class="nav-link" href="get-started.html">Get started</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="use-cases.html">Use cases</a>
@@ -42,6 +39,9 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="documentation.html">Documentation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contribute.html">Contribute</a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="community.html">Community <span class="sr-only">(current)</span></a>
@@ -56,76 +56,39 @@
       </nav>
     </header>
 
-    <div class="container mb-5 pt-5">
-      <h2 class="pb-3 mb-2"><i class="fas fa-comments"></i> Community</h2>
-
-      <div class="row mb-2">
-        <div class="col">
-          <div class="card flex-md-row mb-4 box-shadow h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-primary">Mailing list</strong>
-              <h4 class="mb-0">
-                <a class="text-dark">Developers List</a>
-              </h4>
-              <p class="card-text"> [ <a href="mailto:dev-subscribe@unumi.incubator.apache.org">subscribe</a> | <a href="http://mail-archives.apache.org/mod_mbox/incubator-unomi-dev/" target="_blank">archives</a> ]</p>
-
-              <h4 class="mb-0">
-                <a class="text-dark">Commits List</a>
-              </h4>
-              <p class="card-text"> [ <a href="mailto:commits-subscribe@unumi.incubator.apache.org">subscribe</a> | <a href="http://mail-archives.apache.org/mod_mbox/incubator-unomi-commits/" target="_blank">archives</a> ]</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card flex-md-row mb-4 box-shadow h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-primary">Bug Tracker and CI</strong>
-              <h4 class="mb-0">
-                <a class="text-dark">Jira</a>
-              </h4>
-              <p class="card-text"> [ <a href="https://issues.apache.org/jira/browse/UNOMI" target="_blank">visit</a> ]</p>
-
-              <h4 class="mb-0">
-                <a class="text-dark">Jenkins</a>
-              </h4>
-              <p class="card-text"> [ <a href="https://builds.apache.org/job/unomi-master/" target="_blank">visit</a> ]</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <main role="main">
 
-      <!-- Marketing messaging and featurettes
-      ================================================== -->
-      <!-- Wrap the rest of the page in another container to center all the content. -->
+      <div class="container mb-5 pt-5">
+        <h2 class="pb-3 mb-2"><i class="fas fa-comments"></i> Contact Us</h2>
+        <p>There are many ways to reach the Apache Unomi user and developer communities - use whichever one seems best!</p>
 
-      <div class="container">
-        <!-- CONTRIBUTE -->
-        <div class="row mb-5 mt-5">
-            <div class="col">
-              <h2 class="pb-3 mb-4 font-italic border-bottom"><i class="fas fa-code-branch"></i> Source repository</h2>
-              <p>This project uses Git to manage its source code. Instructions on Git use can be found at <a href="https://git-scm.com/doc">https://git-scm.com/doc</a></p>
-              
-              <h4 class="pb-2 pt-5">Web Browser Access</h4>
-              <p>The following is a link to a browsable version of the source repository:</p>
-              <a href="https://git-wip-us.apache.org/repos/asf/incubator-unomi.git">https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</a>
+        <table class="table">
+          <thead>
+            <th>How to contact us</th>
+            <th>When to use it</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://lists.apache.org/list.html?dev@unomi.apache.org">dev@</a> mailing list</td>
+              <td>Development discussions (<a href="mailto:dev-subscribe@unomi.apache.org">Subscribe</a>, <a href="mailto:dev-unsubscribe@unomi.apache.org">Unsubscribe</a>)</td>
+            </tr>
+            <tr>
+              <td><a href="https://lists.apache.org/list.html?commits@unomi.apache.org">commits@</a> mailing list</td>
+              <td>Firehose of commits, bugs, pull requests, etc. (<a href="mailto:commits-subscribe@unomi.apache.org">Subscribe</a>, <a href="mailto:commits-unsubscribe@unomi.apache.org">Unsubscribe</a>)</td>
+            </tr>
+            <tr>
+              <td><a href="https://issues.apache.org/jira/browse/UNOMI">JIRA bug tracker</a></td>
+              <td>Report bugs / discover known issues</td>
+            </tr>
+            <tr>
+              <td><a href="https://the-asf.slack.com/messages/CBP2Z98Q7/">Slack</a></td>
+              <td>Report bugs / discover known issues</td>
+            </tr>
+          </tbody>
+        </table>
 
-              <h4 class="pb-2 pt-5">Anonymous Access</h4>
-              <p>The source can be checked out anonymously from Git with this command (See <a href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a>):</p>
-              <code>$ git clone https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</code>
-
-              <h4 class="pb-2 pt-5">Developer Access</h4>
-              <p>Only project developers can access the Git tree via this method (See <a href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a>):</p>
-              <code>$ git clone https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</code>
-
-              <h4 class="pb-2 pt-5">Access from Behind a Firewall</h4>
-              <p>Refer to the documentation of the SCM used for more information about access behind a firewall.</p>     
-            </div>
-        </div>
+        <p>If you wish to report a security vulnerability, please contact <a href="mailto:security@apache.org">security@apache.org</a>. Apache Unomi follows the typical <a href="https://apache.org/security/committers.html#vulnerability-handling">Apache vulnerability handling process</a>.</p>
       </div>
-
 
       <div class="container">
 

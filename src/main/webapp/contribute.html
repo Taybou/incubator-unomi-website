@@ -40,8 +40,8 @@
                 <li class="nav-item">
                   <a class="nav-link" href="documentation.html">Documentation</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contribute.html">Contribute</a>
+                <li class="nav-item active">
+                  <a class="nav-link" href="contribute.html">Contribute <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="community.html">Community</a>
@@ -63,16 +63,54 @@
       <!-- Wrap the rest of the page in another container to center all the content. -->
 
       <div class="container">
-
         <!-- CONTRIBUTE -->
-        <div class="row mb-5 mt-5">
-            <div class="col">
-              <h2 class="pb-3 mb-4 font-italic border-bottom"><i class="fas fa-certificate"></i> License</h2>
-              <p>Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>
-              <a href="https://www.apache.org/licenses/LICENSE-2.0">https://www.apache.org/licenses/LICENSE-2.0</a>
-              <p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>            
-            </div>
-        </div>   
+        <div class="row mb-5 mt-5 pt-3">
+          <div class="col-2 sidenav-menu pt-3">
+            <div class="pb-3 text-uppercase"><strong>Contribute</strong></div>
+            <ul class="list-unstyled mb-3">
+              <li><a href="contribute.html">Get started contributing</a></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="col-8 pl-5 pt-3 offset-4">
+            <h2 class="pb-1">Apache Unomi Contribution Guide</h2>
+            <p>The Apache Unomi community welcomes contributions from anyone!</p>
+            <p>There are lots of opportunities:</p>
+            <ul>
+              <li>ask or answer questions on dev@unomi.apache.org or Slack</li>
+              <li>review proposed design ideas on dev@unomi.apache.org</li>
+              <li>improve the documentation</li>
+              <li>contribute bug reports</li>
+              <li>write new examples</li>
+            </ul>
+
+            <p>Most importantly, if you have an idea of how to contribute, then do it!</p>
+
+            <h3 class="pb-3 font-italic"><i class="fas fa-code-branch"></i> Source repository</h3>
+            <p>This project uses Git to manage its source code. Instructions on Git use can be found at <a href="https://git-scm.com/doc">https://git-scm.com/doc</a></p>
+            
+            <h4 class="pt-2">Web Browser Access</h4>
+            <p>The following is a link to a browsable version of the source repository:<br/>
+              <a href="https://git-wip-us.apache.org/repos/asf/incubator-unomi.git">https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</a>
+            </p>
+
+            <h4 class="pt-2">Anonymous Access</h4>
+            <p>The source can be checked out anonymously from Git with this command (See <a href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a>):</p>
+            <p class="alert alert-primary">
+              <code>$ git clone https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</code>
+            </p>
+
+            <h4 class="pt-2">Developer Access</h4>
+            <p>Only project developers can access the Git tree via this method (See <a href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a>):</p>
+            <p class="alert alert-primary">
+              <code>$ git clone https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</code>
+            </p>
+
+            <h4 class="pt-3">Access from Behind a Firewall</h4>
+            <p>Refer to the documentation of the SCM used for more information about access behind a firewall.</p>     
+          </div>
+        </div>
+      </div> 
     </main>
 
     <!-- FOOTER -->

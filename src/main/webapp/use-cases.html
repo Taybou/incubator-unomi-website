@@ -19,7 +19,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top border-bottom box-shadow">
+      <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top border-bottom box-shadow">
         <div class="container">
           <a class="navbar-brand" href="index.html"><img src="images/unomi-86x20.png"/></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,10 +29,7 @@
             <div>
               <ul class="navbar-nav mr-auto align-items-center text-uppercase">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="news.html">News</a>
+                  <a class="nav-link" href="get-started.html">Get started</a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="use-cases.html">Use cases <span class="sr-only">(current)</span></a>
@@ -42,6 +39,9 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="documentation.html">Documentation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contribute.html">Contribute</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="community.html">Community</a>
@@ -59,7 +59,7 @@
     <div class="container pt-5 pb-2">
       <div class="jumbotron p-3 p-md-5 text-white bg-primary">
         <div class="col-md-12 px-0">
-          <h1 class="display-4 font-italic">Apache Unomi has several use cases for what your need !</h1>
+          <h1 class="display-5 font-italic">Apache Unomi has several use cases for what your need !</h1>
           <p class="lead my-3">Apache Unomi is a REST server that manages user profiles and events related to the profiles. It can be used to integrate personalization and profile management within very different systems such as CMS, CRMs, Issue Trackers, native mobile application. It was designed to be easy to integrate with external systems, promoting profile sharing and re-use in very different applications.</p>
           <p class="lead mb-0">Let's start !</a></p>
         </div>
@@ -68,33 +68,7 @@
 
     <main role="main">
 
-      <div class="container">
-
-        <!-- in a few words -->
-        <div class="row pb-2 pt-4 border-bottom">
-          <div class="col-md-12">
-            <h5 class="project-heading"><span class="text-muted">Apache Unomi </span>in a few words</h5>
-            <div class="pb-2 pt-2">
-              <p>Apache Unomi is a REST server that manages user profiles and events related to the profiles. It can be used to integrate personalization and profile management within very different systems such as CMS, CRMs, Issue Trackers, native mobile application. It was designed to be easy to integrate with external systems, promoting profile sharing and re-use in very different applications.</p>
-              <p>Basically the server tracks users using different mechanisms (by default cookies), builds a progressively populated profile and associates events that are performed by a user with his profile. Events may range from a click on a page, to a file being downloaded, a native mobile application button being clicked, or anything that can be sent to the server.</p>
-              <p>The server has a built-in rule system that makes it possible to perform any action when an event is collected for a profile. It also has the notion of user segments, making it possible to classify user profiles into dynamic sub-groups, notably to build personalized experiences for specific segments.</p>
-              <p>As Apache Unomi is built as an OSGi application running inside <a href="https://karaf.apache.org">Apache Karaf</a>, it is extremely extensible and built to be scalable. For example it is possible to plugin new conditions, actions, or any other service that may be needed such as beacon tracking or push notifications.</p>
-              <p>Apache Unomi is also the reference implementation of the upcoming <a href="https://www.oasis-open.org/committees/cxs/">OASIS Context Server (CXS) standard</a> to help standardize personalization of online experience while promoting ethical web experience management and increased user privacy controls.</p>
-            </div>
-          </div>            
-        </div><!-- in a few words -->
-
-        <!-- what is unique -->
-        <div class="row pb-2 pt-4 border-bottom">
-          <div class="col-md-12">
-            <h5 class="project-heading">What is unique about <span class="text-muted">Apache Unomi</span> ?</h5>
-            <div class="pb-2 pt-2">
-              <p>One of the most unique features of this server is its privacy management features. Using the privacy REST API, it is possible for integrators to build user facing UIs that let them manage their profile, and control how they are being tracked, what data has been collected and even anonymize previously collected data or future data ! Finally there is even the possibility for end-users to delete their profile information completely.</p>
-              <p>It is becoming more and more important to address privacy issues correctly, and it is even becoming more and more of a legal issue since a lot of legislation is now appearing in many countries to make sure that user’s right to privacy is respected.</p>
-              <p>Of course these possibilities have no default UI inside of Apache Unomi so it is left up to the developers to expose them (or not).</p>
-            </div>
-          </div> 
-        </div><!-- what is unique -->
+      <div class="container">          
 
         <!-- use-cases -->
         <div class="row pb-4 pt-4 border-bottom">

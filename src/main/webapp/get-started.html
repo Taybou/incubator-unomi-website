@@ -19,7 +19,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top border-bottom box-shadow">
+      <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top border-bottom box-shadow">
         <div class="container">
           <a class="navbar-brand" href="index.html"><img src="images/unomi-86x20.png"/></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,11 +28,8 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
             <div>
               <ul class="navbar-nav mr-auto align-items-center text-uppercase">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="news.html">News <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="get-started.html">Get started <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="use-cases.html">Use cases</a>
@@ -42,6 +39,9 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="documentation.html">Documentation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contribute.html">Contribute</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="community.html">Community</a>
@@ -56,104 +56,56 @@
       </nav>
     </header>
 
-    <div class="container pt-5">
-      <div class="row mb-2">
-        <div class="col-md-6">
-          <div class="card flex-md-row mb-4 box-shadow h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-primary"><i class="fas fa-globe"></i> World</strong>
-              <h3 class="mb-0">
-                <a class="text-dark">ApacheCon North America</a>
-              </h3>
-              <div class="mb-1 text-muted">September 24-27, 2018</div>
-              <p class="card-text mb-auto">Serge will talk about Apache Unomi a Customer Data Platform to replace very expensive and proprietary marketing technologies while implementing strong privacy (GDPR) management. Save the date !</p>
-              <a href="https://apachecon.dukecon.org/acna/2018/#/scheduledEvent/696d1f9503f18fad6" target="_blank">Learn more</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card flex-md-row mb-4 box-shadow h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-success"><i class="fas fa-rocket"></i> Announce</strong>
-              <h3 class="mb-0">
-                <a class="text-dark">Privacy (GDPR consent management)</a>
-              </h3>
-              <div class="mb-1 text-muted">April 9, 2018</div>
-              <p class="card-text mb-auto">New to release 1.3 (currently in development, nearing completion) are features to manage visitor consents, in order to make it easier to comply with new privacy regulations such as the GDPR If you are interested in these new features, you must for the moment build the master branch from source.</p>
-              <a href="consent-api.html">Learn more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <main role="main">
+      <div class="container pt-5 pb-5">
 
-      <!-- Marketing messaging and featurettes
-      ================================================== -->
-      <!-- Wrap the rest of the page in another container to center all the content. -->
+        <!-- in a few words -->
+        <div class="row pb-2 pt-4">
+          <div class="col-md-12">
+            <h5 class="project-heading"><span class="text-muted">Apache Unomi </span>in a few words</h5>
+            <div class="pb-2 pt-2">
+              <p>Apache Unomi is a REST server that manages user profiles and events related to the profiles. It can be used to integrate personalization and profile management within very different systems such as CMS, CRMs, Issue Trackers, native mobile application. It was designed to be easy to integrate with external systems, promoting profile sharing and re-use in very different applications.</p>
+              <p>Basically the server tracks users using different mechanisms (by default cookies), builds a progressively populated profile and associates events that are performed by a user with his profile. Events may range from a click on a page, to a file being downloaded, a native mobile application button being clicked, or anything that can be sent to the server.</p>
+              <p>The server has a built-in rule system that makes it possible to perform any action when an event is collected for a profile. It also has the notion of user segments, making it possible to classify user profiles into dynamic sub-groups, notably to build personalized experiences for specific segments.</p>
+              <p>As Apache Unomi is built as an OSGi application running inside <a href="https://karaf.apache.org">Apache Karaf</a>, it is extremely extensible and built to be scalable. For example it is possible to plugin new conditions, actions, or any other service that may be needed such as beacon tracking or push notifications.</p>
+              <p>Apache Unomi is also the reference implementation of the upcoming <a href="https://www.oasis-open.org/committees/cxs/">OASIS Context Server (CXS) standard</a> to help standardize personalization of online experience while promoting ethical web experience management and increased user privacy controls.</p>
+            </div>
+          </div>            
+        </div><!-- in a few words -->
 
-      <div class="container">
+        <!-- what is unique -->
+        <div class="row pb-2 pt-4">
+          <div class="col-md-12">
+            <h5 class="project-heading">What is unique about <span class="text-muted">Apache Unomi</span> ?</h5>
+            <div class="pb-2 pt-2">
+              <p>One of the most unique features of this server is its privacy management features. Using the privacy REST API, it is possible for integrators to build user facing UIs that let them manage their profile, and control how they are being tracked, what data has been collected and even anonymize previously collected data or future data ! Finally there is even the possibility for end-users to delete their profile information completely.</p>
+              <p>It is becoming more and more important to address privacy issues correctly, and it is even becoming more and more of a legal issue since a lot of legislation is now appearing in many countries to make sure that user’s right to privacy is respected.</p>
+              <p>Of course these possibilities have no default UI inside of Apache Unomi so it is left up to the developers to expose them (or not).</p>
+            </div>
+          </div> 
+        </div><!-- what is unique -->
 
-        <div class="row mb-5 mt-5">
-            <div class="col-md-12">
-              <h2 class="pb-3 mb-4 font-italic border-bottom"><i class="fas fa-bullhorn"></i> Fresh news</h2>
+        <div id="quickstart"><div/>
 
-              <div class="pb-4 mb-3">
-                <h3 class="text-dark">Released version 1.2.0-incubating ! <span class="text-muted">September 28, 2017</span></h3>
-                <p>TODO.</p>
-                <a class="btn btn-outline-primary" href="download.html">Download &raquo;</a>
-                <a class="btn btn-outline-primary" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?" target="_blank">Release Notes &raquo;</a>
-              </div><!-- /.blog-post -->
-
-              <div class="pb-4 mb-3">
-                <h3 class="text-dark">New Salesforce CRM connector contributed ! <span class="text-muted">July 19, 2017</span></h3>
-                <p>TODO.</p>
-              </div><!-- /.blog-post -->
-
-              <div class="pb-4 mb-3">
-                <h3 class="text-dark">Released version 1.1.0-incubating ! <span class="text-muted">October 4, 2016</span></h3>
-                <p>TODO.</p>
-                <a class="btn btn-outline-primary" href="download.html">Download &raquo;</a>
-                <a class="btn btn-outline-primary" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?" target="_blank">Release Notes &raquo;</a>
-              </div><!-- /.blog-post -->
-
-              <div class="pb-4 mb-3">
-                <h3 class="text-dark">Released version 1.0.0-incubating ! <span class="text-muted">May 22, 2016</span></h3>
-                <p>TODO.</p>
-                <a class="btn btn-outline-primary" href="download.html">Download &raquo;</a>
-                <a class="btn btn-outline-primary" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?" target="_blank">Release Notes &raquo;</a>
-              </div><!-- /.blog-post -->
-
-              <div class="pb-4 mb-3">
-                <h3 class="text-dark">Initial code base import in Git repository ! <span class="text-muted">November 23, 2015</span></h3>
-                <p><a href="source-repository.html">See</a></p>
-              </div><!-- /.blog-post -->
-
-              <div class="pb-4 mb-3">
-                <h3 class="text-dark">Added Apache Maturity Model report page ! <span class="text-muted">November 20, 2015</span></h3>
-                <p><a href="maturity-model-report.html">See</a></p>
-              </div><!-- /.blog-post -->
-
-              <div class="pb-4 mb-3">
-                <h3 class="text-dark">Initial web site created ! <span class="text-muted">November 13, 2015</span></h3>
-                <p>TODO.</p>
-              </div><!-- /.blog-post -->
-
-              <div class="pb-4 mb-3">
-                <h3 class="text-dark">JIRA, mailing lists, git, website space created ! <span class="text-muted">October 20, 2015</span></h3>
-                <p>TODO.</p>
-              </div><!-- /.blog-post -->
-
-              <div class="pb-4 mb-3">
-                <h3 class="text-dark">Project enters incubation ! <span class="text-muted">October 5, 2015</span></h3>
-                <p>TODO.</p>
-              </div>
-
-            </div><!-- /.blog-main -->
+        <div class="row featurette pt-4">
+          <div class="col-md-12">
+            <h2 class="featurette-heading">5 Minutes Quick start !</h2>
+            <ol style="list-style-type: decimal"> 
+              <li>Install JDK 8 (see <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a> and make sure you set the JAVA_HOME variable <a href="https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/">https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/</a></li> 
+              <li>Download ElasticSearch here : <a href="https://www.elastic.co/downloads/elasticsearch">https://www.elastic.co/downloads/elasticsearch</a> (use version 5.1.2 for Unomi &lt;= 1.2, 5.6.3 for Unomi &gt;= 1.3)</li> 
+              <li>Uncompress it and change the <code>config/elasticsearch.yml</code> to include the following config : <code>cluster.name: contextElasticSearch</code></li> 
+              <li>Launch ElasticSearch using : <code>bin/elasticsearch</code></li> 
+              <li>Download Apache Unomi here : <a href="http://unomi.incubator.apache.org/download.html">http://unomi.incubator.apache.org/download.html</a></li> 
+              <li>Start it using : <code>./bin/karaf</code></li> 
+              <li>Start the Apache Unomi packages using <code>unomi:start</code> in the Apache Karaf Shell</li> 
+              <li>Wait for startup to complete</li> 
+              <li>Try accessing <a href="https://localhost:9443/cxs/cluster">https://localhost:9443/cxs/cluster</a> with username/password: karaf/karaf . You might get a certificate warning in your browser, just accept it despite the warning it is safe.</li> 
+              <li>Request your first context by simply accessing : <a href="http://localhost:8181/context.js?sessionId=1234">http://localhost:8181/context.js?sessionId=1234</a></li> 
+            </ol>
+          </div>
         </div>
 
-      </div><!-- /.container -->
+      </div>
     </main>
 
     <!-- FOOTER -->
