@@ -24,13 +24,14 @@ a:hover {
   color: #000000;
 }
 
+.navbar-toggler-icon {
+  color: #5a5a5a;
+}
+
 /* Product highlight
 ------------------------- */
 
 .product {
-  /*background-image: url("../images/homepage-bg-dark.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;*/
   background-color: #5c4cdb;
   color: #ffffff;
 }
@@ -92,7 +93,7 @@ a:hover {
 ------------------------- */
 
 .featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 2rem 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -100,6 +101,10 @@ a:hover {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -.05rem;
+}
+
+.featurette {
+  font-size: 1em;
 }
 
 /* Projects
@@ -125,11 +130,11 @@ a:hover {
   }
 
   .featurette-heading {
-    font-size: 50px;
+    font-size: 30px;
   }
 
   .project-heading {
-    font-size: 38px;
+    font-size: 30px;
   }
 }
 
