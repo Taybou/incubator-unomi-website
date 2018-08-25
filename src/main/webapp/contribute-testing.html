@@ -94,55 +94,110 @@
             </ul>
           </div>
           <div class="col-8 pt-3 offset-4">
-            <h2 id="definitions">Pre-commit test policies</h2>
+            <h2 class="pb-1">Apache Unomi Testing</h2>
+            <p>This document outlines how to write tests, which tests are appropriate where, and when tests are run, with some additional information about the testing systems at the bottom.</p>
 
-            <h3>Definition</h3>
+            <h3 id="testing-scenarios">Testing Scenarios</h3>
+
+            <p>Ideally, all available tests should be run against a pull request (PR) before it's allowed to be committed to Unomi's <a href="https://github.com/apache/unomi">Github</a> repo. This is not possible, however, due to a combination of time and resource constraints. Running all tests for each PR would take hours or even days using available resources, which would slow down development considerably.</p>
+
+            <p>Thus tests are split into <em>pre-commit</em> and <em>post-commit</em> suites. Pre-commit is fast, while post-commit is comprehensive. As their names imply, pre-commit tests are run on each PR before it is committed, while post-commits run periodically against the master branch (i.e. on already committed PRs).</p>
+
+            <p>Unomi uses <a href="https://builds.apache.org/job/unomi-master/">Jenkins</a> to run pre-commit and post-commit tests.</p>
+
+            <h4 id="pre-commit">Pre-commit</h4>
+
+            <p>The pre-commit test suite verifies correctness via two testing tools: unit tests and end-to-end (E2E) tests. Unit tests ensure correctness at a basic level, while WordCount E2E tests are run to verify that a basic level of functionality exists.</p>
+
+            <p>This combination of tests hits the appropriate tradeoff between a desire for
+            short (ideally &lt;30m) pre-commit times and a desire to verify that PRs going
+            into Unomi function in the way in which they are intended.</p>
+
+            <p>Pre-commit jobs are kicked off when a contributor makes a PR against the <code>apache/unomi</code> repository. Job statuses are displayed at the bottom of the PR page. Clicking on "Details" will open the status page in the selected tool; there, you can view test status and output.</p>
+
+            <h4 id="post-commit">Post-commit</h4>
+
+            <p>Running in post-commit removes as stringent of a time constraint, which gives us the ability to do some more comprehensive testing. In post-commit we have a test suite running the ValidatesRunner tests against each supported runner, and another for running the full set of E2E tests against each runner.
+            Currently-supported runners are Dataflow, Flink, Spark, and Gearpump, with others soon to follow. Work is ongoing to enable Flink, Spark, and Gearpump in
+            the E2E framework, with full support targeted for end of August 2016. Post-commit tests run periodically, with timing defined in their Jenkins configurations.</p>
+
+            <p>Adding new post-commit E2E tests is generally as easy as adding a *IT.java file to the repository - Failsafe will notice it and run it - but if you want to do more interesting things, take a look at <a href="https://github.com/apache/unomi/blob/master/examples/java/src/test/java/org/apache/unomi/examples/WordCountIT.java">WordCountIT.java</a>.</p>
+
+            <p>Post-commit test results can be found in <a href="https://builds.apache.org/view/A-D/view/Unomi/">Jenkins</a>.</p>
+
+            <h3 id="testing-types">Testing Types</h3>
+
+            <h4 id="unit">Unit</h4>
+
+            <p>Unit tests are, in Unomi as everywhere else, the first line of defense in ensuring software correctness. As all of the contributors to Unomi understand the importance of testing, Unomi has a robust set of unit tests, as well as testing overage measurement tools, which protect the codebase from simple to moderate breakages. Unomi Java unit tests are written in JUnit.</p>
+
+            <h4 id="how-to-run-java-needsrunner-tests">How to run Java tests</h4>
+
+            <p>//TODO add description</p>
+
+            <p class="alert alert-primary"><code>$ .mvn test -Dtest=MyClassTest</code></p>
+
+            <h4 id="e2e">E2E</h4>
+
+            <p>End-to-End tests are meant to verify at the very highest level that the Unomi codebase is working as intended. Because they are implemented as a thin wrapper around existing pipelines, they can be used to prove that the core Unomi functionality is available. They will be used to verify //TODO</p>
+
+            <h3 id="testing-systems">Testing Systems</h3>
+
+            <h4 id="e2e-testing-framework">E2E Testing</h4>
+
+            <p>//TODO</p>
+
+            <h3 id="best_practices">Best practices for writing tests</h3>
+
+            <p>The following best practices help you to write reliable and maintainable tests.</p>
+
+            <h4 id="aim-for-one-failure-path">Aim for one failure path</h4>
+
+            <p>An ideal test has one failure path. When you create your tests, minimize the possible reasons for a test failure. A developer can debug a problem more easily when there are fewer failure paths.</p>
+
+            <h4 id="avoid-non-deterministic-code">Avoid non-deterministic code</h4>
+
+            <p>Reliable tests are predictable and deterministic. Tests that contain non-deterministic code are hard to debug and are often flaky. Non-deterministic code includes the use of randomness, time, and multithreading.</p>
+
+            <p>To avoid non-deterministic code, mock the corresponding methods or classes.</p>
+
+            <h4 id="use-descriptive-test-names">Use descriptive test names</h4>
+
+            <p>Helpful test names contain details about your test, such as test parameters and the expected result. Ideally, a developer can read the test name and know where the buggy code is and how to reproduce the bug.</p>
+
+            <p>An easy and effective way to name your methods is to use these three questions:</p>
 
             <ul>
-              <li>Pre-commit test - Any single test in a pre-commit test suite.</li>
-              <li>Pre-commit test suite - A collection of pre-commit tests that have a common denominator. A test suite runs in a single Jenkins job.</li>
+              <li>What you are testing?</li>
+              <li>What are the parameters of the test?</li>
+              <li>What is the expected result of the test?</li>
             </ul>
 
-            <h3>Policies</h3>
+            <p>For example, consider a scenario where you want to add a test for the
+            <code>Divide</code> method</p>
 
-            <h4>Pull Requests</h4>
+            <p>If you use a simple test name, such as <code>testDivide()</code>, you are missing important information such as the expected action, parameter information, and expected test result. As a result, triaging a test failure requires you to look at the test implementation to see what the test does.</p>
+
+            <p>Instead, use a name such as <code>invokingDivideWithDivisorEqualToZeroThrowsException()</code>, which specifies:</p>
 
             <ul>
-              <li>A PR must pass pre-commit tests before being committed to the main Beam repo.
-                <ul>
-                  <li>The relevant pre-commit test suites are automatically launched according to PR contents.</li>
-                </ul>
-              </li>
+              <li>the expected action of the test (<code>invokingDivide</code>)</li>
+              <li>details about important parameters (the divisor is zero)</li>
+              <li>the expected result (the test throws an exception)</li>
             </ul>
 
-            <h4>Problems</h4>
+            <p>If this test fails, you can look at the descriptive test name to find the most probable cause of the failure. In addition, test frameworks and test result
+            dashboards use the test name when reporting test results. Descriptive names enable contributors to look at test suite results and easily see what features are failing.</p>
 
-            <h5>Breakage</h5>
+            <p>Long method names are not a problem for test code. Test names are rarely used (usually when you triage and debug), and when you do need to look at a
+            test, it is helpful to have descriptive names.</p>
 
-            <p>Breakage is when one or more tests in a pre-commit test suite fails or is flaky (occasionally fails).</p>
+            <h4 id="use-a-pre-commit-test-if-possible">Use a pre-commit test if possible</h4>
 
-            <ul>
-              <li>Breakages should be fixed within 8 hours.</li>
-            </ul>
+            <p>Post-commit tests validate that Unomi works correctly in broad variety of scenarios. The tests catch errors that are hard to predict in the design and implementation stages</p>
 
-            <h5>Slowness</h5>
-
-            <p>Slowness is when the total time to run a pre-commit suite exceeds 30 minutes*, including the time the job spends in the Jenkins queue.</p>
-
-            <ul>
-              <li>Slowness should be fixed within 24 hours.</li>
-            </ul>
-
-            <h4>Problem Resolution</h4>
-
-            <p>For any problem, the options are, one of:</p>
-
-            <ul>
-              <li>Roll back the culprit PR.</li>
-              <li>Roll out a fix within 24 hours.</li>
-              <li>Disable the slow test or feature temporarily (make sure there is a tracking issue to re-enable it).</li>
-            </ul>
-
+            <p>However, we often write a test to verify a specific scenario. In this situation, it is usually possible to implement the test as a unit test or a component test. You can add your unit tests or component tests to the pre-commit test suite, and the pre-commit test results give you faster code health feedback during the development stage, when a bug is cheap to fix.</p>
+          </div>
         </div>
       </div> 
     </main>
