@@ -133,14 +133,10 @@
             <p>After all the tests pass, there should be a green merge button at the bottom of the pull request.  There are multiple choices and you should choose "Merge pull request" (the default). This preserves the commit history and adds a merge commit, so be sure the commit history has been curated appropriately.</p>
 
             <p>Do <em>not</em> use the default GitHub commit message, which looks like this:</p>
-            <p class="alert alert-primary">
-              <code>Merge pull request #1234 from some_user/transient_branch_name [UNOMI-7873] Fix the foo bizzle bazzle</code>
-            </p>
+            <pre class="alert alert-primary"><code>Merge pull request #1234 from some_user/transient_branch_name [UNOMI-7873] Fix the foo bizzle bazzle</code></pre>
 
             <p>Instead, pull it all into the subject line:</p>
-            <p class="alert alert-primary">
-              <code>Merge pull request #1234: [UNOMI-7873] Fix the foo bizzle bazzle</code>
-            </p>
+            <pre class="alert alert-primary"><code>Merge pull request #1234: [UNOMI-7873] Fix the foo bizzle bazzle</code></pre>
 
             <p>If you have comments to add, put them in the body of the commit message.</p>    
           </div>

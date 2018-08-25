@@ -96,102 +96,6 @@
           <div class="col-8 pt-3 offset-4">
             <h2 id="apache-unomi-release-guide">Apache Unomi Release Guide</h2>
 
-            <ul>
-              <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-              <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-              <li><a href="#decide-to-release" id="markdown-toc-decide-to-release">Decide to release</a>    <ul>
-                  <li><a href="#checklist-to-proceed-to-the-next-step" id="markdown-toc-checklist-to-proceed-to-the-next-step">Checklist to proceed to the next step</a></li>
-                </ul>
-              </li>
-              <li><a href="#prepare-for-the-release" id="markdown-toc-prepare-for-the-release">Prepare for the release</a>    <ul>
-                  <li><a href="#one-time-setup-instructions" id="markdown-toc-one-time-setup-instructions">One-time setup instructions</a>        <ul>
-                      <li><a href="#gpg-key" id="markdown-toc-gpg-key">GPG Key</a>            <ul>
-                          <li><a href="#use-preparation_before_releasesh-to-setup-gpg" id="markdown-toc-use-preparation_before_releasesh-to-setup-gpg">Use preparation_before_release.sh to setup GPG</a></li>
-                          <li><a href="#run-all-commands-manually" id="markdown-toc-run-all-commands-manually">Run all commands manually</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="#access-to-apache-nexus-repository" id="markdown-toc-access-to-apache-nexus-repository">Access to Apache Nexus repository</a></li>
-                      <li><a href="#website-development-setup" id="markdown-toc-website-development-setup">Website development setup</a></li>
-                      <li><a href="#register-to-pypi" id="markdown-toc-register-to-pypi">Register to PyPI</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#create-a-new-version-in-jira" id="markdown-toc-create-a-new-version-in-jira">Create a new version in JIRA</a></li>
-                  <li><a href="#triage-release-blocking-issues-in-jira" id="markdown-toc-triage-release-blocking-issues-in-jira">Triage release-blocking issues in JIRA</a></li>
-                  <li><a href="#review-release-notes-in-jira" id="markdown-toc-review-release-notes-in-jira">Review Release Notes in JIRA</a></li>
-                  <li><a href="#create-a-release-branch-in-apacheunomi-repository" id="markdown-toc-create-a-release-branch-in-apacheunomi-repository">Create a release branch in apache/unomi repository</a>        <ul>
-                      <li><a href="#use-cut_release_branchsh-to-cut-a-release-branch" id="markdown-toc-use-cut_release_branchsh-to-cut-a-release-branch">Use cut_release_branch.sh to cut a release branch</a></li>
-                      <li><a href="#run-all-steps-manually" id="markdown-toc-run-all-steps-manually">Run all steps manually</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#start-a-snapshot-build" id="markdown-toc-start-a-snapshot-build">Start a snapshot build</a>        <ul>
-                      <li><a href="#run-start_snapshot_buildsh-to-trigger-build" id="markdown-toc-run-start_snapshot_buildsh-to-trigger-build">Run start_snapshot_build.sh to trigger build</a></li>
-                      <li><a href="#do-all-operations-manually" id="markdown-toc-do-all-operations-manually">Do all operations manually</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#verify-that-a-release-build-works" id="markdown-toc-verify-that-a-release-build-works">Verify that a Release Build Works</a>        <ul>
-                      <li><a href="#run-verify_release_buildsh-to-verity-a-release-build" id="markdown-toc-run-verify_release_buildsh-to-verity-a-release-build">Run verify_release_build.sh to verity a release build</a></li>
-                      <li><a href="#run-all-commands-manually-1" id="markdown-toc-run-all-commands-manually-1">Run all commands manually</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#update-and-verify-javadoc" id="markdown-toc-update-and-verify-javadoc">Update and Verify Javadoc</a></li>
-                  <li><a href="#checklist-to-proceed-to-the-next-step-1" id="markdown-toc-checklist-to-proceed-to-the-next-step-1">Checklist to proceed to the next step</a></li>
-                </ul>
-              </li>
-              <li><a href="#build-a-release-candidate" id="markdown-toc-build-a-release-candidate">Build a release candidate</a>    <ul>
-                  <li><a href="#run-build_release_candidatesh-to-create-rc" id="markdown-toc-run-build_release_candidatesh-to-create-rc">Run build_release_candidate.sh to create RC</a></li>
-                  <li><a href="#run-all-steps-manually-1" id="markdown-toc-run-all-steps-manually-1">Run all steps manually</a>        <ul>
-                      <li><a href="#build-and-stage-java-artifacts-with-gradle" id="markdown-toc-build-and-stage-java-artifacts-with-gradle">Build and stage Java artifacts with Gradle</a></li>
-                      <li><a href="#stage-source-release-on-distapacheorg" id="markdown-toc-stage-source-release-on-distapacheorg">Stage source release on dist.apache.org</a></li>
-                      <li><a href="#stage-python-binaries-on-distapacheorg" id="markdown-toc-stage-python-binaries-on-distapacheorg">Stage python binaries on dist.apache.org</a></li>
-                      <li><a href="#build-the-pydoc-api-reference" id="markdown-toc-build-the-pydoc-api-reference">Build the Pydoc API reference</a></li>
-                      <li><a href="#propose-a-pull-request-for-website-updates" id="markdown-toc-propose-a-pull-request-for-website-updates">Propose a pull request for website updates</a>            <ul>
-                          <li><a href="#create-pydoc" id="markdown-toc-create-pydoc">Create Pydoc</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="#build-and-stage-python-wheels" id="markdown-toc-build-and-stage-python-wheels">Build and stage python wheels</a></li>
-                      <li><a href="#checklist-to-proceed-to-the-next-step-2" id="markdown-toc-checklist-to-proceed-to-the-next-step-2">Checklist to proceed to the next step</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#vote-on-the-release-candidate" id="markdown-toc-vote-on-the-release-candidate">Vote on the release candidate</a>    <ul>
-                  <li><a href="#run-validation-tests" id="markdown-toc-run-validation-tests">Run validation tests</a>        <ul>
-                      <li><a href="#run-validations-using-run_rc_validationsh" id="markdown-toc-run-validations-using-run_rc_validationsh">Run validations using run_rc_validation.sh</a></li>
-                      <li><a href="#run-validations-manually" id="markdown-toc-run-validations-manually">Run validations manually</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#checklist-to-proceed-to-the-finalization-step" id="markdown-toc-checklist-to-proceed-to-the-finalization-step">Checklist to proceed to the finalization step</a></li>
-                </ul>
-              </li>
-              <li><a href="#fix-any-issues" id="markdown-toc-fix-any-issues">Fix any issues</a>    <ul>
-                  <li><a href="#checklist-to-proceed-to-the-next-step-3" id="markdown-toc-checklist-to-proceed-to-the-next-step-3">Checklist to proceed to the next step</a></li>
-                </ul>
-              </li>
-              <li><a href="#finalize-the-release" id="markdown-toc-finalize-the-release">Finalize the release</a>    <ul>
-                  <li><a href="#deploy-artifacts-to-maven-central-repository" id="markdown-toc-deploy-artifacts-to-maven-central-repository">Deploy artifacts to Maven Central Repository</a></li>
-                  <li><a href="#deploy-python-artifacts-to-pypi" id="markdown-toc-deploy-python-artifacts-to-pypi">Deploy Python artifacts to PyPI</a>        <ul>
-                      <li><a href="#deploy-source-release-to-distapacheorg" id="markdown-toc-deploy-source-release-to-distapacheorg">Deploy source release to dist.apache.org</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#git-tag" id="markdown-toc-git-tag">Git tag</a></li>
-                  <li><a href="#merge-website-pull-request" id="markdown-toc-merge-website-pull-request">Merge website pull request</a></li>
-                  <li><a href="#mark-the-version-as-released-in-jira" id="markdown-toc-mark-the-version-as-released-in-jira">Mark the version as released in JIRA</a></li>
-                  <li><a href="#recordkeeping-with-asf" id="markdown-toc-recordkeeping-with-asf">Recordkeeping with ASF</a></li>
-                  <li><a href="#checklist-to-proceed-to-the-next-step-4" id="markdown-toc-checklist-to-proceed-to-the-next-step-4">Checklist to proceed to the next step</a></li>
-                </ul>
-              </li>
-              <li><a href="#promote-the-release" id="markdown-toc-promote-the-release">Promote the release</a>    <ul>
-                  <li><a href="#apache-mailing-lists" id="markdown-toc-apache-mailing-lists">Apache mailing lists</a></li>
-                  <li><a href="#unomi-blog" id="markdown-toc-unomi-blog">Unomi blog</a></li>
-                  <li><a href="#social-media" id="markdown-toc-social-media">Social media</a></li>
-                  <li><a href="#checklist-to-declare-the-process-completed" id="markdown-toc-checklist-to-declare-the-process-completed">Checklist to declare the process completed</a></li>
-                </ul>
-              </li>
-              <li><a href="#improve-the-process" id="markdown-toc-improve-the-process">Improve the process</a></li>
-            </ul>
-
-            <h2 id="introduction">Introduction</h2>
-
             <p>The Apache Unomi project periodically declares and publishes releases. A release is one or more packages of the project artifact(s) that are approved for general public distribution and use. They may come with various degrees of caveat regarding their perceived quality and potential for change, such as "alpha", "beta", "incubating", "stable", etc.</p>
 
             <p>The Unomi community treats releases with great importance. They are a public face of the project and most users interact with the project only through the releases. Releases are signed off by the entire Unomi community in a public vote.</p>
@@ -257,17 +161,13 @@
                 <p>Script: <a href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/preparation_before_release.sh">preparation_before_release.sh</a></p>
               </li>
               <li>Usage
-                <p class="alert alert-primary">
-                  <code>./unomi/release/src/main/scripts/preparation_before_release.sh</code>
-                </p>
+                <pre class="alert alert-primary"><code>./unomi/release/src/main/scripts/preparation_before_release.sh</code></pre>
               </li>
               <li>Tasks included
                 <ol>
                   <li>Help you create a new GPG key if you want.</li>
                   <li>Configure 
-                    <p class="alert alert-primary">
-                      <code>git user.signingkey</code>
-                    </p> 
+                    <pre class="alert alert-primary"><code>git user.signingkey</code></pre> 
                     with chosen pubkey.</li>
                   <li>
                     <p>Add chosen pubkey into <a href="https://dist.apache.org/repos/dist/dev/unomi/KEYS">dev KEYS</a>  and <a href="https://dist.apache.org/repos/dist/release/unomi/KEYS">release KEYS</a></p>
@@ -285,47 +185,42 @@
               <li>
                 <p>Get more entropy for creating a GPG key</p>
 
-                <p class="alert alert-primary"><code>sudo apt-get install rng-toolssudo rngd -r /dev/urandom
-                  </code></p>
+                <pre class="alert alert-primary"><code>sudo apt-get install rng-toolssudo rngd -r /dev/urandom</code></pre>
               </li>
               <li>
                 <p>Create a GPG key</p>
 
-                <p class="alert alert-primary"><code>gpg --full-generate-key</code></p>
+                <pre class="alert alert-primary"><code>gpg --full-generate-key</code></pre>
               </li>
               <li>
                 <p>Determine your Apache GPG Key and Key ID, as follows:</p>
 
-                <p class="alert alert-primary"><code>gpg --list-keys</code></p>
+                <pre class="alert alert-primary"><code>gpg --list-keys</code></pre>
 
                 <p>This will list your GPG keys. One of these should reflect your Apache account, for example:</p>
 
-                <p class="alert alert-primary"><code>
-                  --------------------------------------------------
-                  pub   2048R/845E6689 2016-02-23
-                  uid                  Nomen Nescio &lt;anonymous@apache.org&gt;
-                  sub   2048R/BA4D50BE 2016-02-23
-                </code></p>
+                <pre class="alert alert-primary"><code>--------------------------------------------------
+pub   2048R/845E6689 2016-02-23
+uid                  Nomen Nescio &lt;anonymous@apache.org&gt;
+sub   2048R/BA4D50BE 2016-02-23</code></pre>
 
-                <p>Here, the key ID is the 8-digit hex string in the <code class="highlighter-rouge">pub</code> line: <code class="highlighter-rouge">845E6689</code>.</p>
+                <p>Here, the key ID is the 8-digit hex string in the <code>pub</code> line: <code>845E6689</code>.</p>
 
-                <p>Now, add your Apache GPG key to the Unomi's <code class="highlighter-rouge">KEYS</code> file both in <a href="https://dist.apache.org/repos/dist/dev/unomi/KEYS"><code class="highlighter-rouge">dev</code></a> and <a href="https://dist.apache.org/repos/dist/release/unomi/KEYS"><code class="highlighter-rouge">release</code></a> repositories at <code class="highlighter-rouge">dist.apache.org</code>. Follow the instructions listed at the top of these files. (Note: Only PMC members have write access to the release repository. If you end up getting 403 errors ask on the mailing list for assistance.)</p>
+                <p>Now, add your Apache GPG key to the Unomi's <code>KEYS</code> file both in <a href="https://dist.apache.org/repos/dist/dev/unomi/KEYS"><code>dev</code></a> and <a href="https://dist.apache.org/repos/dist/release/unomi/KEYS"><code>release</code></a> repositories at <code>dist.apache.org</code>. Follow the instructions listed at the top of these files. (Note: Only PMC members have write access to the release repository. If you end up getting 403 errors ask on the mailing list for assistance.)</p>
               </li>
               <li>
-                <p>Configure <code class="highlighter-rouge">git</code> to use this key when signing code by giving it your key ID, as follows:</p>
+                <p>Configure <code>git</code> to use this key when signing code by giving it your key ID, as follows:</p>
 
-                <p class="alert alert-primary"><code>git config --global user.signingkey 845E6689
-                </code></p>
+                <pre class="alert alert-primary"><code>git config --global user.signingkey 845E6689</code></pre>
 
-                <p>You may drop the <code class="highlighter-rouge">--global</code> option if you'd prefer to use this key for the current repository only.</p>
+                <p>You may drop the <code>--global</code> option if you'd prefer to use this key for the current repository only.</p>
               </li>
               <li>
                 <p>Start GPG agent in order to unlock your GPG key</p>
 
-                <p class="alert alert-primary"><code>eval $(gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info)
-                export GPG_TTY=$(tty)
-                export GPG_AGENT_INFO
-                </code></p>
+                <pre class="alert alert-primary"><code>eval $(gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info)
+export GPG_TTY=$(tty)
+export GPG_AGENT_INFO</code></pre>
               </li>
             </ul>
 
@@ -335,37 +230,32 @@
 
             <ol>
               <li>You log in with your Apache account.</li>
-              <li>Confirm you have appropriate access by finding <code class="highlighter-rouge">org.apache.unomi</code> under <code class="highlighter-rouge">Staging Profiles</code>.</li>
-              <li>Navigate to your <code class="highlighter-rouge">Profile</code> (top right dropdown menu of the page).</li>
-              <li>Choose <code class="highlighter-rouge">User Token</code> from the dropdown, then click <code class="highlighter-rouge">Access User Token</code>. Copy a snippet of the Maven XML configuration block.</li>
+              <li>Confirm you have appropriate access by finding <code>org.apache.unomi</code> under <code>Staging Profiles</code>.</li>
+              <li>Navigate to your <code>Profile</code> (top right dropdown menu of the page).</li>
+              <li>Choose <code>User Token</code> from the dropdown, then click <code>Access User Token</code>. Copy a snippet of the Maven XML configuration block.</li>
               <li>
-                <p>Insert this snippet twice into your global Maven <code class="highlighter-rouge">settings.xml</code> file, typically <code class="highlighter-rouge">${HOME}/.m2/settings.xml</code>. The end result should look like this, where <code class="highlighter-rouge">TOKEN_NAME</code> and <code class="highlighter-rouge">TOKEN_PASSWORD</code> are your secret tokens:</p>
+                <p>Insert this snippet twice into your global Maven <code>settings.xml</code> file, typically <code>${HOME}/.m2/settings.xml</code>. The end result should look like this, where <code>TOKEN_NAME</code> and <code>TOKEN_PASSWORD</code> are your secret tokens:</p>
 
-                <p class="alert alert-primary"><code> &lt;settings&gt;
-                   &lt;servers&gt;
-                     &lt;server&gt;
-                       &lt;id&gt;apache.releases.https&lt;/id&gt;
-                       &lt;username&gt;TOKEN_NAME&lt;/username&gt;
-                       &lt;password&gt;TOKEN_PASSWORD&lt;/password&gt;
-                     &lt;/server&gt;
-                     &lt;server&gt;
-                       &lt;id&gt;apache.snapshots.https&lt;/id&gt;
-                       &lt;username&gt;TOKEN_NAME&lt;/username&gt;
-                       &lt;password&gt;TOKEN_PASSWORD&lt;/password&gt;
-                     &lt;/server&gt;
-                   &lt;/servers&gt;
-                 &lt;/settings&gt;
-                </code></p>
+                <pre class="alert alert-primary"><code>&lt;settings&gt;
+  &lt;servers&gt;
+   &lt;server&gt;
+     &lt;id&gt;apache.releases.https&lt;/id&gt;
+     &lt;username&gt;TOKEN_NAME&lt;/username&gt;
+     &lt;password&gt;TOKEN_PASSWORD&lt;/password&gt;
+   &lt;/server&gt;
+   &lt;server&gt;
+     &lt;id&gt;apache.snapshots.https&lt;/id&gt;
+     &lt;username&gt;TOKEN_NAME&lt;/username&gt;
+     &lt;password&gt;TOKEN_PASSWORD&lt;/password&gt;
+   &lt;/server&gt;
+  &lt;/servers&gt;
+&lt;/settings&gt;</code></pre>
               </li>
             </ol>
 
             <h4 id="website-development-setup">Website development setup</h4>
 
-            <p>Prepare to update the Unomi website by following the <a href="/contribute/website-contributions/">website development instructions</a>.</p>
-
-            <h4 id="register-to-pypi">Register to PyPI</h4>
-
-            <p>Release manager needs to have an account with PyPI. If you need one, <a href="https://pypi.python.org/account/register/">register at PyPI</a>. You also need to be a maintainer (or an owner) of the <a href="https://pypi.python.org/pypi/apache-unomi">apache-unomi</a> package in order to push a new release. Ask on the mailing list for assistance.</p>
+            <p>Prepare to update the Unomi website by following the <a href="contribute-website.html">website development instructions</a>.</p>
 
             <h3 id="create-a-new-version-in-jira">Create a new version in JIRA</h3>
 
@@ -374,32 +264,32 @@
             <p>Attention: Only committer has permission to perform this.</p>
 
             <ol>
-              <li>In JIRA, navigate to the <a href="https://issues.apache.org/jira/plugins/servlet/project-config/BEAM/versions"><code class="highlighter-rouge">Unomi &gt; Administration &gt; Versions</code></a>.</li>
-              <li>Add a new release: choose the next minor version number compared to the one currently underway, select today's date as the <code class="highlighter-rouge">Start Date</code>, and choose <code class="highlighter-rouge">Add</code>.</li>
+              <li>In JIRA, navigate to the <a href="https://issues.apache.org/jira/plugins/servlet/project-config/UNOMI/versions"><code>Unomi &gt; Administration &gt; Versions</code></a>.</li>
+              <li>Add a new release: choose the next minor version number compared to the one currently underway, select today's date as the <code>Start Date</code>, and choose <code>Add</code>.</li>
             </ol>
 
             <h3 id="triage-release-blocking-issues-in-jira">Triage release-blocking issues in JIRA</h3>
 
-            <p>There could be outstanding release-blocking issues, which should be triaged before proceeding to build a release candidate. We track them by assigning a specific <code class="highlighter-rouge">Fix version</code> field even before the issue resolved.</p>
+            <p>There could be outstanding release-blocking issues, which should be triaged before proceeding to build a release candidate. We track them by assigning a specific <code>Fix version</code> field even before the issue resolved.</p>
 
-            <p>The list of release-blocking issues is available at the <a href="https://issues.apache.org/jira/browse/BEAM/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel">version status page</a>. Triage each unresolved issue with one of the following resolutions:</p>
+            <p>The list of release-blocking issues is available at the <a href="https://issues.apache.org/jira/browse/UNOMI/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel">version status page</a>. Triage each unresolved issue with one of the following resolutions:</p>
 
             <ul>
               <li>If the issue has been resolved and JIRA was not updated, resolve it accordingly.</li>
-              <li>If the issue has not been resolved and it is acceptable to defer this until the next release, update the <code class="highlighter-rouge">Fix Version</code> field to the new version you just created. Please consider discussing this with stakeholders and the dev@ mailing list, as appropriate.</li>
+              <li>If the issue has not been resolved and it is acceptable to defer this until the next release, update the <code>Fix Version</code> field to the new version you just created. Please consider discussing this with stakeholders and the dev@ mailing list, as appropriate.</li>
               <li>If the issue has not been resolved and it is not acceptable to release until it is fixed, the release cannot proceed. Instead, work with the Unomi community to resolve the issue.</li>
             </ul>
 
             <h3 id="review-release-notes-in-jira">Review Release Notes in JIRA</h3>
 
-            <p>JIRA automatically generates Release Notes based on the <code class="highlighter-rouge">Fix Version</code> field applied to issues. Release Notes are intended for Unomi users (not Unomi committers/contributors). You should ensure that Release Notes are informative and useful.</p>
+            <p>JIRA automatically generates Release Notes based on the <code>Fix Version</code> field applied to issues. Release Notes are intended for Unomi users (not Unomi committers/contributors). You should ensure that Release Notes are informative and useful.</p>
 
-            <p>Open the release notes from the <a href="https://issues.apache.org/jira/browse/BEAM/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel">version status page</a> by choosing the release underway and clicking Release Notes.</p>
+            <p>Open the release notes from the <a href="https://issues.apache.org/jira/browse/UNOMI/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel">version status page</a> by choosing the release underway and clicking Release Notes.</p>
 
             <p>You should verify that the issues listed automatically by JIRA are appropriate to appear in the Release Notes. Specifically, issues should:</p>
 
             <ul>
-              <li>Be appropriately classified as <code class="highlighter-rouge">Bug</code>, <code class="highlighter-rouge">New Feature</code>, <code class="highlighter-rouge">Improvement</code>, etc.</li>
+              <li>Be appropriately classified as <code>Bug</code>, <code>New Feature</code>, <code>Improvement</code>, etc.</li>
               <li>Represent noteworthy user-facing changes, such as new functionality, backward-incompatible API changes, or performance improvements.</li>
               <li>Have occurred since the previous release; an issue that was introduced and fixed between releases should not appear in the Release Notes.</li>
               <li>Have an issue title that makes sense when read on its own.</li>
@@ -421,31 +311,19 @@
                 <p>Script: <a href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/cut_release_branch.sh">cut_release_branch.sh</a></p>
               </li>
               <li>Usage
-                <p class="alert alert-primary"><code># Cut a release branch
-            ./unomi/release/src/main/scripts/cut_release_branch.sh 
-            --release= ${RELEASE_VERSION}
-            --next_release=${NEXT_VERSION}
-              
-            # Show help page
-            ./unomi/release/src/main/scripts/cut_release_branch.sh -h
-            </code></p>
+                <pre class="alert alert-primary"><code># Cut a release branch
+./unomi/release/src/main/scripts/cut_release_branch.sh 
+--release= ${RELEASE_VERSION}
+--next_release=${NEXT_VERSION}
+
+# Show help page
+./unomi/release/src/main/scripts/cut_release_branch.sh -h</code></pre>
               </li>
               <li>Tasks included
                 <ol>
                   <li>Create release-${RELEASE_VERSION} branch locally.</li>
-                  <li>
-                    <p>Change and commit dev versoin number in master branch:</p>
-
-                    <p><a href="https://github.com/apache/unomi/blob/e8abafe360e126818fe80ae0f6075e71f0fc227d/buildSrc/src/main/groovy/org/apache/unomi/gradle/UnomiModulePlugin.groovy#L209">UnomiModulePlugin.groovy</a>,
-            <a href="https://github.com/apache/unomi/blob/e8abafe360e126818fe80ae0f6075e71f0fc227d/gradle.properties#L25">gradle.properties</a>,
-            <a href="https://github.com/apache/unomi/blob/e8abafe360e126818fe80ae0f6075e71f0fc227d/sdks/python/apache_unomi/version.py#L21">version.py</a></p>
-                  </li>
-                  <li>
-                    <p>Change and commit version number in release branch:</p>
-
-                    <p><a href="https://github.com/apache/unomi/blob/release-2.6.0/sdks/python/apache_unomi/version.py#L21">version.py</a>, 
-            <a href="https://github.com/apache/unomi/blob/release-2.6.0/runners/google-cloud-dataflow-java/build.gradle#L39">build.gradle</a></p>
-                  </li>
+                  <li>Change and commit dev versoin number in master branch.</li>
+                  <li>Change and commit version number in release branch.</li>
                 </ol>
               </li>
             </ul>
@@ -455,74 +333,57 @@
               <li>
                 <p>Checkout working branch</p>
 
-                <p>Check out the version of the codebase from which you start the release. For a new minor or major release, this may be <code class="highlighter-rouge">HEAD</code> of the <code class="highlighter-rouge">master</code> branch. To build a hotfix/incremental release, instead of the <code class="highlighter-rouge">master</code> branch, use the release tag of the release being patched. (Please make sure your cloned repository is up-to-date before starting.)</p>
+                <p>Check out the version of the codebase from which you start the release. For a new minor or major release, this may be <code>HEAD</code> of the <code>master</code> branch. To build a hotfix/incremental release, instead of the <code>master</code> branch, use the release tag of the release being patched. (Please make sure your cloned repository is up-to-date before starting.)</p>
 
-                <p class="alert alert-primary"><code>git checkout &lt;master branch OR release tag&gt;
-            </code></p>
+                <pre class="alert alert-primary"><code>git checkout &lt;master branch OR release tag&gt;</code></pre>
 
-                <p><strong>NOTE</strong>: If you are doing an incremental/hotfix release (e.g. 2.5.1), please check out the previous release tag, rather than the master branch.</p>
+                <p><strong>NOTE</strong>: If you are doing an incremental/hotfix release (e.g. 1.3.1), please check out the previous release tag, rather than the master branch.</p>
               </li>
               <li>
                 <p>Set up environment variables</p>
 
-                <p>Set up a few environment variables to simplify Maven commands that follow. (We use <code class="highlighter-rouge">bash</code> Unix syntax in this guide.)</p>
+                <p>Set up a few environment variables to simplify Maven commands that follow. (We use <code>bash</code> Unix syntax in this guide.)</p>
 
-                <p class="alert alert-primary"><code>RELEASE=2.5.0
-            NEXT_VERSION_IN_BASE_BRANCH=2.6.0
-            BRANCH=release-${RELEASE}
-            </code></p>
+                <pre class="alert alert-primary"><code>RELEASE=1.3.0
+NEXT_VERSION_IN_BASE_BRANCH=1.4.0
+BRANCH=release-${RELEASE}</code></pre>
 
                 <p>Version represents the release currently underway, while next version specifies the anticipated next version to be released from that branch. Normally, 1.2.0 is followed by 1.3.0, while 1.2.3 is followed by 1.2.4.</p>
 
-                <p><strong>NOTE</strong>: Only if you are doing an incremental/hotfix release (e.g. 2.5.1), please check out the previous release tag, before running the following instructions:</p>
+                <p><strong>NOTE</strong>: Only if you are doing an incremental/hotfix release (e.g. 1.3.1), please check out the previous release tag, before running the following instructions:</p>
 
-                <p class="alert alert-primary"><code>BASE_RELEASE=2.5.0
-            RELEASE=2.5.1
-            NEXT_VERSION_IN_BASE_BRANCH=2.6.0
-            git checkout tags/${BASE_RELEASE}
-            </code></p>
+                <pre class="alert alert-primary"><code>BASE_RELEASE=1.3.0
+RELEASE=1.3.1
+NEXT_VERSION_IN_BASE_BRANCH=1.4.0
+git checkout tags/${BASE_RELEASE}</code></pre>
               </li>
               <li>
                 <p>Create release branch locally</p>
 
-                <p class="alert alert-primary"><code>git branch ${BRANCH}
-            </code></p>
+                <pre class="alert alert-primary"><code>git branch ${BRANCH}</code></pre>
               </li>
               <li>
                 <p>Update version files in the master branch.</p>
 
-                <p class="alert alert-primary"><code># Now change the version in existing gradle files, and Python files
-            sed -i -e "s/'${RELEASE}'/'${NEXT_VERSION_IN_BASE_BRANCH}'/g" build_rules.gradle
-            sed -i -e "s/${RELEASE}/${NEXT_VERSION_IN_BASE_BRANCH}/g" gradle.properties
-            sed -i -e "s/${RELEASE}/${NEXT_VERSION_IN_BASE_BRANCH}/g" sdks/python/apache_unomi/version.py
-              
-            # Save changes in master branch
-            git add gradle.properties build_rules.gradle sdks/python/apache_unomi/version.py
-            git commit -m "Moving to ${NEXT_VERSION_IN_BASE_BRANCH}-SNAPSHOT on master branch."
-            </code></p>
+                <pre class="alert alert-primary"><code>mvn version:set
+git add .
+git commit -m "Moving to ${NEXT_VERSION_IN_BASE_BRANCH}-SNAPSHOT on master branch."</code></pre>
               </li>
               <li>
                 <p>Check out the release branch.</p>
 
-                <p class="alert alert-primary"><code>git checkout ${BRANCH}
-            </code></p>
+                <pre class="alert alert-primary"><code>git checkout ${BRANCH}</code></pre>
               </li>
               <li>
                 <p>Update version files in release branch</p>
 
-                <p class="alert alert-primary"><code>DEV=${RELEASE}.dev
-            sed -i -e "s/${DEV}/${RELEASE}/g" sdks/python/apache_unomi/version.py
-            sed -i -e "s/'unomi-master-.*'/'unomi-${RELEASE}'/g" runners/google-cloud-dataflow-java/build.gradle
-            </code></p>
+                <pre class="alert alert-primary"><code>mvn version:set</code></pre>
               </li>
             </ul>
 
             <h3 id="start-a-snapshot-build">Start a snapshot build</h3>
 
-            <p>Start a build of <a href="https://builds.apache.org/view/A-D/view/Unomi/job/unomi_Release_NightlySnapshot/">the nightly snapshot</a> against master branch.
-            Some processes, including our archetype tests, rely on having a live SNAPSHOT of the current version
-            from the <code class="highlighter-rouge">master</code> branch. Once the release branch is cut, these SNAPSHOT versions are no longer found,
-            so builds will be broken until a new snapshot is available.</p>
+            <p>Start a build of <a href="https://builds.apache.org/view/A-D/view/Unomi/job/unomi_Release_NightlySnapshot/">the nightly snapshot</a> against master branch. Some processes, including our archetype tests, rely on having a live SNAPSHOT of the current version from the <code>master</code> branch. Once the release branch is cut, these SNAPSHOT versions are no longer found, so builds will be broken until a new snapshot is available.</p>
 
             <p>There are 2 ways to trigger a nightly build, either using automation script(recommended), or perform all operations manually.</p>
 
@@ -534,19 +395,18 @@
               <li>
                 <p>Usage</p>
 
-                <p class="alert alert-primary"><code>./unomi/release/src/main/scripts/start_snapshot_build.sh
-            </code></p>
+                <pre class="alert alert-primary"><code>./unomi/release/src/main/scripts/start_snapshot_build.sh</code></pre>
               </li>
               <li>Tasks included
                 <ol>
                   <li>Install <a href="https://github.com/github/hub">hub</a> with your agreement.</li>
-                  <li>Touch an empty txt file and commit changes into <code class="highlighter-rouge">${your remote unomi repo}/snapshot_build</code></li>
+                  <li>Touch an empty txt file and commit changes into <code>${your remote unomi repo}/snapshot_build</code></li>
                   <li>Use hub to create a PR against apache:master, which triggers a Jenkins job to build snapshot.</li>
                 </ol>
               </li>
               <li>Tasks you need to do manually
                 <ol>
-                  <li>Check whether the Jenkins job gets triggered. If not, please comment <code class="highlighter-rouge">Run Gradle Publish</code> into the generated PR.</li>
+                  <li>Check whether the Jenkins job gets triggered. If not, please comment <code>Run Gradle Publish</code> into the generated PR.</li>
                   <li>After verifying build succeeded, you need to close PR manually.</li>
                 </ol>
               </li>
@@ -556,7 +416,7 @@
 
             <ul>
               <li>Find one PR against apache:master in unomi.</li>
-              <li>Comment  <code class="highlighter-rouge">Run Gradle Publish</code> in this pull request to trigger build.</li>
+              <li>Comment  <code>Run Gradle Publish</code> in this pull request to trigger build.</li>
               <li>Verify that build successes.</li>
             </ul>
 
@@ -572,13 +432,12 @@
               <li>
                 <p>Usage</p>
 
-                <p class="alert alert-primary"><code>./unomi/release/src/main/scripts/verify_release_build.sh
-            </code></p>
+                <pre class="alert alert-primary"><code>./unomi/release/src/main/scripts/verify_release_build.sh</code></pre>
               </li>
               <li>Tasks included
                 <ol>
-                  <li>Install <code class="highlighter-rouge">pip</code>, <code class="highlighter-rouge">virtualenv</code>, <code class="highlighter-rouge">cython</code> and <code class="highlighter-rouge">/usr/bin/time</code> with your agreements.</li>
-                  <li>Run <code class="highlighter-rouge">gradle release build</code> against release branch.</li>
+                  <li>Install <code>pip</code>, <code>virtualenv</code>, <code>cython</code> and <code>/usr/bin/time</code> with your agreements.</li>
+                  <li>Run <code>gradle release build</code> against release branch.</li>
                 </ol>
               </li>
               <li>Tasks you need to do manually
@@ -590,93 +449,31 @@
               </li>
             </ul>
 
-            <h4 id="run-all-commands-manually-1">Run all commands manually</h4>
-            <ul>
-              <li>Pre-installation for python build
-                <ol>
-                  <li>
-                    <p>Install pip</p>
-
-                    <p class="alert alert-primary"><code> curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-             python get-pip.py
-            </code></p>
-                  </li>
-                  <li>
-                    <p>Install virtualenv</p>
-
-                    <p class="alert alert-primary"><code> pip install --upgrade virtualenv
-            </code></p>
-                  </li>
-                  <li>
-                    <p>Cython</p>
-
-                    <p class="alert alert-primary"><code> sudo pip install cython
-             sudo apt-get install gcc
-             sudo apt-get install python-dev
-            </code></p>
-                  </li>
-                  <li>
-                    <p>Make sure your <code class="highlighter-rouge">time</code> alias to <code class="highlighter-rouge">/usr/bin/time</code>, if not:</p>
-
-                    <p class="alert alert-primary"><code> sudo apt-get install time
-             alias time='/usr/bin/time'
-            </code></p>
-                  </li>
-                </ol>
-              </li>
-              <li>
-                <p>Run gradle release build</p>
-
-                <ol>
-                  <li>
-                    <p>Clean current workspace</p>
-
-                    <p class="alert alert-primary"><code> git clean -fdx 
-             ./gradlew clean
-            </code></p>
-                  </li>
-                  <li>Unlock the secret key
-                    <p class="alert alert-primary"><code> gpg --output ~/doc.sig --sign ~/.bashrc
-            </code></p>
-                  </li>
-                  <li>Run build command
-                    <p class="alert alert-primary"><code>./gradlew build -PisRelease --no-parallel --scan --stacktrace --continue
-            </code></p>
-                  </li>
-                </ol>
-              </li>
-            </ul>
-
             <h3 id="update-and-verify-javadoc">Update and Verify Javadoc</h3>
 
-            <p>The build with <code class="highlighter-rouge">-PisRelease</code> creates the combined Javadoc for the release in <code class="highlighter-rouge">sdks/java/javadoc</code>.</p>
+            <p>The build with <code>-PisRelease</code> creates the combined Javadoc for the release in <code>sdks/java/javadoc</code>.</p>
 
-            <p>The file <code class="highlighter-rouge">sdks/java/javadoc/ant.xml</code> file contains a list of modules to include
-            in and exclude, plus a list of offline URLs that populate links from Unomi's
-            Javadoc to the Javadoc for other modules that Unomi depends on.</p>
+            <p>The file <code>sdks/java/javadoc/ant.xml</code> file contains a list of modules to include in and exclude, plus a list of offline URLs that populate links from Unomi's Javadoc to the Javadoc for other modules that Unomi depends on.</p>
 
             <ul>
               <li>
-                <p>Confirm that new modules added since the last release have been added to the
-            inclusion list as appropriate.</p>
+                <p>Confirm that new modules added since the last release have been added to the inclusion list as appropriate.</p>
               </li>
               <li>
                 <p>Confirm that the excluded package list is up to date.</p>
               </li>
               <li>
-                <p>Verify the version numbers for offline links match the versions used by Unomi. If
-            the version number has changed, download a new version of the corresponding
-            <code class="highlighter-rouge">&lt;module&gt;-docs/package-list</code> file.</p>
+                <p>Verify the version numbers for offline links match the versions used by Unomi. If the version number has changed, download a new version of the corresponding <code>&lt;module&gt;-docs/package-list</code> file.</p>
               </li>
             </ul>
 
             <h3 id="checklist-to-proceed-to-the-next-step-1">Checklist to proceed to the next step</h3>
 
             <ol>
-              <li>Release Manager's GPG key is published to <code class="highlighter-rouge">dist.apache.org</code></li>
-              <li>Release Manager's GPG key is configured in <code class="highlighter-rouge">git</code> configuration</li>
-              <li>Release Manager has <code class="highlighter-rouge">org.apache.unomi</code> listed under <code class="highlighter-rouge">Staging Profiles</code> in Nexus</li>
-              <li>Release Manager's Nexus User Token is configured in <code class="highlighter-rouge">settings.xml</code></li>
+              <li>Release Manager's GPG key is published to <code>dist.apache.org</code></li>
+              <li>Release Manager's GPG key is configured in <code>git</code> configuration</li>
+              <li>Release Manager has <code>org.apache.unomi</code> listed under <code>Staging Profiles</code> in Nexus</li>
+              <li>Release Manager's Nexus User Token is configured in <code>settings.xml</code></li>
               <li>JIRA release item for the subsequent release has been created</li>
               <li>There are no release blocking JIRA issues</li>
               <li>Release Notes in JIRA have been audited and adjusted</li>
@@ -694,7 +491,7 @@
 
             <p>For this step, we recommend you using automation script to create a RC, but you still can perform all steps manually if you want.</p>
 
-            <p><em>BUT</em> the final step of rc creation is <code class="highlighter-rouge">Build and stage python wheels</code>, which need to done manually.</p>
+            <p><em>BUT</em> the final step of rc creation is <code>Build and stage python wheels</code>, which need to done manually.</p>
 
             <h3 id="run-build_release_candidatesh-to-create-rc">Run build_release_candidate.sh to create RC</h3>
             <ul>
@@ -703,9 +500,7 @@
               </li>
               <li>
                 <p>Usage</p>
-
-                <p class="alert alert-primary"><code>./unomi/release/src/main/scripts/build_release_candidate.sh
-            </code></p>
+                <pre class="alert alert-primary"><code>./unomi/release/src/main/scripts/build_release_candidate.sh</code></pre>
               </li>
               <li>Tasks included
                 <ol>
@@ -715,7 +510,6 @@
                   <li>Stage,sign and hash python binaries into dist.apache.ord dev repo python dir</li>
                   <li>Create a PR to update unomi-site, changes includes:
                     <ul>
-                      <li>Copy python doc into unomi-site</li>
                       <li>Copy java doc into unomi-site</li>
                       <li>Update release version into <a href="https://github.com/apache/unomi-site/blob/asf-site/_config.yml">_config.yml</a>.</li>
                     </ul>
@@ -731,159 +525,27 @@
               </li>
             </ul>
 
-            <h3 id="run-all-steps-manually-1">Run all steps manually</h3>
-
-            <h4 id="build-and-stage-java-artifacts-with-gradle">Build and stage Java artifacts with Gradle</h4>
-
-            <p>Set up a few environment variables to simplify the commands that follow. These identify the release candidate being built, and the branch where you will stage files. Start with <code class="highlighter-rouge">RC_NUM</code> equal to <code class="highlighter-rouge">1</code> and increment it for each candidate.</p>
-
-            <p class="alert alert-primary"><code>RC_NUM=1
-            </code></p>
-
-            <p>Make sure your git config will maintain your account:</p>
-
-            <p class="alert alert-primary"><code>git config credential.helper store
-            </code></p>
-
-            <p>Use Gradle release plugin to build the release artifacts, and push code and
-            release tag to the origin repository (this would be the Apache Unomi repo):</p>
-
-            <p class="alert alert-primary"><code>./gradlew release -Prelease.newVersion=${RELEASE}-SNAPSHOT \
-                          -Prelease.releaseVersion=${RELEASE}-RC${RC_NUM} \
-                          -Prelease.useAutomaticVersion=true --info --no-daemon
-            </code></p>
-
-            <p>Use Gradle publish plugin to stage these artifacts on the Apache Nexus repository, as follows:</p>
-
-            <p class="alert alert-primary"><code>./gradlew publish -PisRelease --no-parallel --no-daemon
-            </code></p>
-
-            <p>Review all staged artifacts. They should contain all relevant parts for each module, including <code class="highlighter-rouge">pom.xml</code>, jar, test jar, javadoc, etc. Artifact names should follow <a href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.unomi%22">the existing format</a> in which artifact name mirrors directory structure, e.g., <code class="highlighter-rouge">unomi-sdks-java-io-kafka</code>. Carefully review any new artifacts.</p>
-
-            <p>Close the staging repository on Apache Nexus. When prompted for a description, enter "Apache Unomi, version X, release candidate Y".</p>
-
-            <h4 id="stage-source-release-on-distapacheorg">Stage source release on dist.apache.org</h4>
-
-            <p>Attention: Only committer has permissions to perform following steps.</p>
-
-            <p>Copy the source release to the dev repository of <code class="highlighter-rouge">dist.apache.org</code>.</p>
-
-            <ol>
-              <li>
-                <p>If you have not already, check out the Unomi section of the <code class="highlighter-rouge">dev</code> repository on <code class="highlighter-rouge">dist.apache.org</code> via Subversion. In a fresh directory:</p>
-
-                <p class="alert alert-primary"><code> svn co https://dist.apache.org/repos/dist/dev/unomi
-            </code></p>
-              </li>
-              <li>
-                <p>Make a directory for the new release:</p>
-
-                <p class="alert alert-primary"><code> mkdir unomi/${RELEASE}
-             cd unomi/${RELEASE}
-            </code></p>
-              </li>
-              <li>
-                <p>Download source zip from GitHub:</p>
-
-                <p>wget https://github.com/apache/unomi/archive/release-${RELEASE}.zip \
-                  -O apache-unomi-${RELEASE}-source-release.zip</p>
-              </li>
-              <li>
-                <p>Create hashes and sign the source distribution:</p>
-
-                <p class="alert alert-primary"><code> gpg --armor --detach-sig apache-unomi-${RELEASE}-source-release.zip
-             sha512sum apache-unomi-${RELEASE}-source-release.zip &gt; apache-unomi-${RELEASE}-source-release.zip.sha512
-            </code></p>
-              </li>
-              <li>
-                <p>Add and commit all the files.</p>
-
-                <p class="alert alert-primary"><code> svn add unomi/${RELEASE}
-             svn commit
-            </code></p>
-              </li>
-              <li>
-                <p>Verify that files are <a href="https://dist.apache.org/repos/dist/dev/unomi">present</a>.</p>
-              </li>
-            </ol>
-
-            <h4 id="stage-python-binaries-on-distapacheorg">Stage python binaries on dist.apache.org</h4>
-
-            <p>Build python binaries in release branch in sdks/python dir.</p>
-
-            <p class="alert alert-primary"><code>python setup.py sdist --format=zip
-            cd dist
-            cp apache-unomi-${RELEASE}.zip staging/apache-unomi-${RELEASE}-python.zip
-            cd staging
-            </code></p>
-
-            <p>Create hashes and sign the binaries</p>
-
-            <p class="alert alert-primary"><code>gpg --armor --detach-sig apache-unomi-${RELEASE}-python.zip
-            sha512sum apache-unomi-${RELEASE}-python.zip &gt; apache-unomi-${RELEASE}-python.zip.sha512
-            </code></p>
-
-            <p>Staging binaries</p>
-
-            <p class="alert alert-primary"><code>svn co https://dist.apache.org/repos/dist/dev/unomi
-            cd unomi/${RELEASE}
-            svn add *
-            svn commit
-            </code></p>
-
-            <p>Verify that files are <a href="https://dist.apache.org/repos/dist/dev/unomi">present</a>.</p>
-
-            <h4 id="build-the-pydoc-api-reference">Build the Pydoc API reference</h4>
-
-            <p>Make sure you have <code class="highlighter-rouge">tox</code> installed:</p>
-
-            <p class="alert alert-primary"><code>pip install tox
-
-            </code></p>
-            <p>Create the Python SDK documentation using sphinx by running a helper script.</p>
-            <p class="alert alert-primary"><code>cd sdks/python &amp;&amp; tox -e docs
-            </code></p>
-            <p>By default the Pydoc is generated in <code class="highlighter-rouge">sdks/python/target/docs/_build</code>. Let <code class="highlighter-rouge">${PYDOC_ROOT}</code> be the absolute path to <code class="highlighter-rouge">_build</code>.</p>
-
             <h4 id="propose-a-pull-request-for-website-updates">Propose a pull request for website updates</h4>
 
             <p>The final step of building the candidate is to propose a website pull request.</p>
 
-            <p>Start by updating <code class="highlighter-rouge">release_latest</code> version flag in the top-level <code class="highlighter-rouge">_config.yml</code>, and list the new release in the <a href="/get-started/downloads/">Apache Unomi Downloads</a>, linking to the source code download and the Release Notes in JIRA.</p>
+            <p>Start by updating <code>release_latest</code> version flag in the top-level <code>_config.yml</code>, and list the new release in the <a href="/get-started/downloads/">Apache Unomi Downloads</a>, linking to the source code download and the Release Notes in JIRA.</p>
 
             <p>Unomi publishes API reference manual for each release on the website. For Java SDK, that's Javadoc.</p>
 
-            <p>One of the artifacts created in the release contains the Javadoc for the
-            website. To update the website, you must unpack this jar file from the release
+            <p>One of the artifacts created in the release contains the Javadoc for the website. To update the website, you must unpack this jar file from the release
             candidate into the source tree of the website.</p>
 
-            <p>Add the new Javadoc to <a href="/documentation/sdks/javadoc/">SDK API Reference page</a> page, as follows:</p>
+            <p>Add the new Javadoc to <a href="documentation.html">SDK API Reference page</a> page, as follows:</p>
 
             <ul>
-              <li>Unpack the Maven artifact <code class="highlighter-rouge">org.apache.unomi:unomi-sdks-java-javadoc</code> into some temporary location. Call this <code class="highlighter-rouge">${JAVADOC_TMP}</code>.</li>
-              <li>Copy the generated Javadoc into the website repository: <code class="highlighter-rouge">cp -r ${JAVADOC_TMP} src/documentation/sdks/javadoc/${RELEASE}</code>.</li>
+              <li>Unpack the Maven artifact <code>org.apache.unomi:unomi-sdks-java-javadoc</code> into some temporary location. Call this <code>${JAVADOC_TMP}</code>.</li>
+              <li>Copy the generated Javadoc into the website repository: <code>cp -r ${JAVADOC_TMP} src/documentation/sdks/javadoc/${RELEASE}</code>.</li>
               <li>Set up the necessary git commands to account for the new and deleted files from the javadoc.</li>
-              <li>Update the Javadoc link on this page to point to the new version (in <code class="highlighter-rouge">src/documentation/sdks/javadoc/current.md</code>).</li>
-            </ul>
-
-            <h5 id="create-pydoc">Create Pydoc</h5>
-            <p>Add the new Pydoc to <a href="/documentation/sdks/pydoc/">SDK API Reference page</a> page, as follows:</p>
-
-            <ul>
-              <li>Copy the generated Pydoc into the website repository: <code class="highlighter-rouge">cp -r ${PYDOC_ROOT} src/documentation/sdks/pydoc/${RELEASE}</code>.</li>
-              <li>Remove <code class="highlighter-rouge">.doctrees</code> directory.</li>
-              <li>Update the Pydoc link on this page to point to the new version (in <code class="highlighter-rouge">src/documentation/sdks/pydoc/current.md</code>).</li>
+              <li>Update the Javadoc link on this page to point to the new version (in <code>src/documentation/sdks/javadoc/current.md</code>).</li>
             </ul>
 
             <p>Finally, propose a pull request with these changes. (Don't merge before finalizing the release.)</p>
-
-            <h4 id="build-and-stage-python-wheels">Build and stage python wheels</h4>
-
-            <p>There is a wrapper repo <a href="https://github.com/apache/unomi-wheels">unomi-wheels</a> to help build python wheels.</p>
-
-            <p>If you are interested in how it works, please refer to the <a href="https://github.com/apache/unomi-wheels#structure">structure section</a>.</p>
-
-            <p>Please follow the <a href="https://github.com/apache/unomi-wheels#user-guide">user guide</a> to build python wheels.</p>
 
             <h4 id="checklist-to-proceed-to-the-next-step-2">Checklist to proceed to the next step</h4>
 
@@ -895,10 +557,10 @@
 
             <p>You can (optionally) also do additional verification by:</p>
             <ol>
-              <li>Check that Python zip file contains the <code class="highlighter-rouge">README.md</code>, <code class="highlighter-rouge">NOTICE</code>, and <code class="highlighter-rouge">LICENSE</code> files.</li>
-              <li>Check hashes (e.g. <code class="highlighter-rouge">md5sum -c *.md5</code> and <code class="highlighter-rouge">sha1sum -c *.sha1</code>)</li>
-              <li>Check signatures (e.g. <code class="highlighter-rouge">gpg --verify apache-unomi-1.2.3-python.zip.asc apache-unomi-1.2.3-python.zip</code>)</li>
-              <li><code class="highlighter-rouge">grep</code> for legal headers in each file.</li>
+              <li>Check that Python zip file contains the <code>README.md</code>, <code>NOTICE</code>, and <code>LICENSE</code> files.</li>
+              <li>Check hashes (e.g. <code>md5sum -c *.md5</code> and <code>sha1sum -c *.sha1</code>)</li>
+              <li>Check signatures (e.g. <code>gpg --verify apache-unomi-1.2.3-python.zip.asc apache-unomi-1.2.3-python.zip</code>)</li>
+              <li><code>grep</code> for legal headers in each file.</li>
               <li>Run all jenkins suites and include links to passing tests in the voting email. (Select "Run with parameters")</li>
             </ol>
 
@@ -910,58 +572,56 @@
 
             <p>Start the review-and-vote thread on the dev@ mailing list. Here's an email template; please adjust as you see fit.</p>
 
-            <p class="alert alert-primary"><code>From: Release Manager
-            To: dev@unomi.apache.org
-            Subject: [VOTE] Release 1.2.3, release candidate #3
+            <pre class="alert alert-primary"><code>From: Release Manager
+To: dev@unomi.apache.org
+Subject: [VOTE] Release 1.2.3, release candidate #3
 
-            Hi everyone,
-            Please review and vote on the release candidate #3 for the version 1.2.3, as follows:
-            [ ] +1, Approve the release
-            [ ] -1, Do not approve the release (please provide specific comments)
+Hi everyone,
+Please review and vote on the release candidate #3 for the version 1.2.3, as follows:
+[ ] +1, Approve the release
+[ ] -1, Do not approve the release (please provide specific comments)
 
 
-            The complete staging area is available for your review, which includes:
-            * JIRA release notes [1],
-            * the official Apache source release to be deployed to dist.apache.org [2], which is signed with the key with fingerprint FFFFFFFF [3],
-            * all artifacts to be deployed to the Maven Central Repository [4],
-            * source code tag "v1.2.3-RC3" [5],
-            * website pull request listing the release and publishing the API reference manual [6].
-            * Java artifacts were built with Maven MAVEN_VERSION and OpenJDK/Oracle JDK JDK_VERSION.
-            * Python artifacts are deployed along with the source release to the dist.apache.org [2].
+The complete staging area is available for your review, which includes:
+* JIRA release notes [1],
+* the official Apache source release to be deployed to dist.apache.org [2], which is signed with the key with fingerprint FFFFFFFF [3],
+* all artifacts to be deployed to the Maven Central Repository [4],
+* source code tag "v1.2.3-RC3" [5],
+* website pull request listing the release and publishing the API reference manual [6].
+* Java artifacts were built with Maven MAVEN_VERSION and OpenJDK/Oracle JDK JDK_VERSION.
+* Python artifacts are deployed along with the source release to the dist.apache.org [2].
 
-            The vote will be open for at least 72 hours. It is adopted by majority approval, with at least 3 PMC affirmative votes.
+The vote will be open for at least 72 hours. It is adopted by majority approval, with at least 3 PMC affirmative votes.
 
-            Thanks,
-            Release Manager
+Thanks,
+Release Manager
 
-            [1] link
-            [2] link
-            [3] https://dist.apache.org/repos/dist/release/unomi/KEYS
-            [4] link
-            [5] link
-            [6] link
-            </code></p>
+[1] link
+[2] link
+[3] https://dist.apache.org/repos/dist/release/unomi/KEYS
+[4] link
+[5] link
+[6] link</code></pre>
 
-            <p>If there are any issues found in the release candidate, reply on the vote thread to cancel the vote. There's no need to wait 72 hours. Proceed to the <code class="highlighter-rouge">Fix Issues</code> step below and address the problem. However, some issues don't require cancellation. For example, if an issue is found in the website pull request, just correct it on the spot and the vote can continue as-is.</p>
+            <p>If there are any issues found in the release candidate, reply on the vote thread to cancel the vote. There's no need to wait 72 hours. Proceed to the <code>Fix Issues</code> step below and address the problem. However, some issues don't require cancellation. For example, if an issue is found in the website pull request, just correct it on the spot and the vote can continue as-is.</p>
 
             <p>If there are no issues, reply on the vote thread to close the voting. Then, tally the votes in a separate email. Here's an email template; please adjust as you see fit.</p>
 
-            <p class="alert alert-primary"><code>From: Release Manager
-            To: dev@unomi.apache.org
-            Subject: [RESULT] [VOTE] Release 1.2.3, release candidate #3
+            <pre class="alert alert-primary"><code>From: Release Manager
+To: dev@unomi.apache.org
+Subject: [RESULT] [VOTE] Release 1.2.3, release candidate #3
 
-            I'm happy to announce that we have unanimously approved this release.
+I'm happy to announce that we have unanimously approved this release.
 
-            There are XXX approving votes, XXX of which are binding:
-            * approver 1
-            * approver 2
-            * approver 3
-            * approver 4
+There are XXX approving votes, XXX of which are binding:
+* approver 1
+* approver 2
+* approver 3
+* approver 4
 
-            There are no disapproving votes.
+There are no disapproving votes.
 
-            Thanks everyone!
-            </code></p>
+Thanks everyone!</code></pre>
 
             <h3 id="run-validation-tests">Run validation tests</h3>
             <p>All tests listed in this <a href="https://s.apache.org/unomi-release-validation">spreadsheet</a></p>
@@ -976,34 +636,16 @@
               <li>
                 <p>Usage</p>
 
-                <p class="alert alert-primary"><code>./unomi/release/src/main/scripts/run_rc_validation.sh
-            </code></p>
+                <pre class="alert alert-primary"><code>./unomi/release/src/main/scripts/run_rc_validation.sh</code></pre>
               </li>
               <li>Tasks included
                 <ol>
-                  <li>Run Java quickstart with Direct Runner, Apex local runner, Flink local runner, Spark local runner and Dataflow runner.</li>
-                  <li>Run Java Mobile Games(UserScore, HourlyTeamScore, Leaderboard) with Dataflow runner.</li>
-                  <li>Create a PR against apache:master to trigger python validation job, including
-                    <ul>
-                      <li>Python quickstart in batch and streaming mode with direct runner and Dataflow runner.</li>
-                      <li>Python Mobile Games(UserScore, HourlyTeamScore) with direct runner and Dataflow runner.</li>
-                    </ul>
-                  </li>
-                  <li>Run Python Streaming MobileGames, includes
-                    <ul>
-                      <li>Start a new terminal to run Java Pubsub injector.</li>
-                      <li>Start a new terminal to run python LeaderBoard with Direct Runner.</li>
-                      <li>Start a new terminal to run python LeaderBoard with Dataflow Runner.</li>
-                      <li>Start a new terminal to run python GameStats with Direct Runner.</li>
-                      <li>Start a new terminal to run python GameStats with Dataflow Runner.</li>
-                    </ul>
-                  </li>
+                  <li>Run Java quickstart.</li>
                 </ol>
               </li>
               <li>Tasks you need to do manually
                 <ol>
                   <li>Check whether validations succeed by following console output instructions.</li>
-                  <li>Terminate streaming jobs and java injector.</li>
                   <li>Sign up <a href="https://s.apache.org/unomi-release-validation">spreadsheet</a>.</li>
                   <li>Vote in the release thread.</li>
                 </ol>
@@ -1018,229 +660,12 @@
               <li>
                 <p>Java Quickstart Validation</p>
 
-                <p>Direct Runner:</p>
-                <p class="alert alert-primary"><code>./gradlew :unomi-runners-direct-java:runQuickstartJavaDirect \ 
-            -Prepourl=https://repository.apache.org/content/repositories/orgapacheunomi-${KEY} \
-            -Pver=${RELEASE_VERSION}
-            </code></p>
-                <p>Apex Local Runner</p>
-                <p class="alert alert-primary"><code>./gradlew :unomi-runners-apex:runQuickstartJavaApex \
-            -Prepourl=https://repository.apache.org/content/repositories/orgapacheunomi${KEY} \
-            -Pver=${RELEASE_VERSION}
-            </code></p>
-                <p>Flink Local Runner</p>
-                <p class="alert alert-primary"><code>./gradlew :unomi-runners-flink_2.11:runQuickstartJavaFlinkLocal \
-            -Prepourl=https://repository.apache.org/content/repositories/orgapacheunomi-${KEY} \
-            -Pver=${RELEASE_VERSION}
-            </code></p>
-                <p>Spark Local Runner</p>
-                <p class="alert alert-primary"><code>./gradlew :unomi-runners-spark:runQuickstartJavaSpark \
-            -Prepourl=https://repository.apache.org/content/repositories/orgapacheunomi-${KEY} \
-            -Pver=${RELEASE_VERSION}
-            </code></p>
-                <p>Dataflow Runner</p>
-                <p class="alert alert-primary"><code>./gradlew :unomi-runners-google-cloud-dataflow-java:runQuickstartJavaDataflow \
-            -Prepourl=https://repository.apache.org/content/repositories/orgapacheunomi-${KEY} \
-            -Pver= ${RELEASE_VERSION}\
-            -PgcpProject=${YOUR_GCP_PROJECT} \
-            -PgcsBucket=${YOUR_GCP_BUCKET}
-            </code></p>
+                <p>//TODO</p>
+                <pre class="alert alert-primary"><code>//TODO</code></pre>
               </li>
+              
               <li>
-                <p>Java Mobile Game(UserScore, HourlyTeamScore, Leaderboard)</p>
-
-                <p>Pre-request</p>
-                <ul>
-                  <li>Create your own BigQuery dataset
-                    <p class="alert alert-primary"><code>bq mk --project=${YOUR_GCP_PROJECT} ${YOUR_DATASET}
-            </code></p>
-                  </li>
-                  <li>Create yout PubSub topic
-                    <p class="alert alert-primary"><code>gcloud alpha pubsub topics create --project=${YOUR_GCP_PROJECT} ${YOUR_PROJECT_PUBSUB_TOPIC} 
-            </code></p>
-                  </li>
-                  <li>
-                    <p>Setup your service account</p>
-
-                    <p>Goto IAM console in your project to create a service account as <code class="highlighter-rouge">project owner</code></p>
-
-                    <p>Run</p>
-                    <p class="alert alert-primary"><code>gcloud iam service-accounts keys create ${YOUR_KEY_JSON} --iam-account ${YOUR_SERVICE_ACCOUNT_NAME}@${YOUR_PROJECT_NAME}
-            export GOOGLE_APPLICATION_CREDENTIALS=${PATH_TO_YOUR_KEY_JSON} 
-            </code></p>
-                    <p>Run</p>
-                    <p class="alert alert-primary"><code>./gradlew :unomi-runners-google-cloud-dataflow-java:runMobileGamingJavaDataflow \
-             -Prepourl=https://repository.apache.org/content/repositories/orgapacheunomi-${KEY} \ 
-             -Pver= ${RELEASE_VERSION}\
-             -PgcpProject=${YOUR_GCP_PROJECT} \
-             -PgcsBucket=${YOUR_GCP_BUCKET} \
-             -PbqDataset=${YOUR_DATASET} -PpubsubTopic=${YOUR_PROJECT_PUBSUB_TOPIC}
-            </code></p>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <p>Python Quickstart(batch &amp; streaming), MobileGame(UserScore, HourlyTeamScore)</p>
-
                 <p>Create a new PR in apache/unomi</p>
-
-                <p>In comment area, type in <code class="highlighter-rouge">Run Python ReleaseCandidate</code></p>
-              </li>
-              <li>
-                <p>Python Leaderboard &amp; GameStats</p>
-                <ul>
-                  <li>Get staging RC <code class="highlighter-rouge">wget https://dist.apache.org/repos/dist/dev/unomi/2.5.0/*</code></li>
-                  <li>
-                    <p>Verify the hashes</p>
-
-                    <p class="alert alert-primary"><code>sha512sum -c apache-unomi-2.5.0-python.zip.sha512
-            sha512sum -c apache-unomi-2.5.0-source-release.zip.sha512
-            </code></p>
-                  </li>
-                  <li>
-                    <p>Build SDK</p>
-
-                    <p class="alert alert-primary"><code>sudo apt-get install unzip
-            unzip apache-unomi-2.5.0-source-release.zip
-            python setup.py sdist
-            </code></p>
-                  </li>
-                  <li>
-                    <p>Setup virtualenv</p>
-
-                    <p class="alert alert-primary"><code>pip install --upgrade pip
-            pip install --upgrade setuptools
-            pip install --upgrade virtualenv
-            virtualenv unomi_env
-             . unomi_env/bin/activate
-            </code></p>
-                  </li>
-                  <li>
-                    <p>Install SDK</p>
-
-                    <p class="alert alert-primary"><code>pip install dist/apache-unomi-2.5.0.tar.gz
-            pip install dist/apache-unomi-2.5.0.tar.gz[gcp]
-            </code></p>
-                  </li>
-                  <li>
-                    <p>Setup GCP</p>
-
-                    <p>Please repeat following steps for every following test.</p>
-
-                    <p class="alert alert-primary"><code>bq rm -rf --project=${YOUR_PROJECT} ${USER}_test
-            bq mk --project=${YOUR_PROJECT} ${USER}_test
-            gsutil rm -rf ${YOUR_GS_STORAGE]
-            gsutil mb -p ${YOUR_PROJECT} ${YOUR_GS_STORAGE}
-            gcloud alpha pubsub topics create --project=${YOUR_PROJECT} ${YOUR_PUBSUB_TOPIC}
-            </code></p>
-                    <p>Setup your service account as described in <code class="highlighter-rouge">Java Mobile Game</code> section above.</p>
-
-                    <p>Produce data by using java injector:</p>
-                    <ul>
-                      <li>Configure your ~/.m2/settings.xml as following:
-                        <p class="alert alert-primary"><code>&lt;settings&gt;
-              &lt;profiles&gt;
-                &lt;profile&gt;
-                  &lt;id&gt;release-repo&lt;/id&gt;
-                  &lt;activation&gt;
-                    &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
-                  &lt;/activation&gt;
-                  &lt;repositories&gt;
-                    &lt;repository&gt;
-                      &lt;id&gt;Release 2.4.0 RC3&lt;/id&gt;
-                      &lt;name&gt;Release 2.4.0 RC3&lt;/name&gt;
-                      &lt;url&gt;https://repository.apache.org/content/repositories/orgapacheunomi-1031/&lt;/url&gt;
-                    &lt;/repository&gt;
-                  &lt;/repositories&gt;
-                &lt;/profile&gt;
-              &lt;/profiles&gt;
-            &lt;/settings&gt;
-            </code></p>
-                        <p><em>Note</em>: You can found the latest  <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">url</code> for one RC in the vote email thread sent out by Release Manager.</p>
-                      </li>
-                      <li>Run
-                        <p class="alert alert-primary"><code>mvn archetype:generate \
-                  -DarchetypeGroupId=org.apache.unomi \
-                  -DarchetypeArtifactId=unomi-sdks-java-maven-archetypes-examples \
-                  -DarchetypeVersion=${RELEASE_VERSION} \
-                  -DgroupId=org.example \
-                  -DartifactId=word-count-unomi \
-                  -Dversion="0.1" \
-                  -Dpackage=org.apache.unomi.examples \
-                  -DinteractiveMode=false
-                  -DarchetypeCatalog=internal
-                        
-            mvn compile exec:java -Dexec.mainClass=org.apache.unomi.examples.complete.game.injector.Injector \
-              -Dexec.args="${YOUR_PROJECT} ${YOUR_PUBSUB_TOPIC} none"
-            </code></p>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>Run Leaderboard with Direct Runner
-                    <p class="alert alert-primary"><code>python -m apache_unomi.examples.complete.game.leader_board \
-            --project=${YOUR_PROJECT} \
-            --topic projects/${YOUR_PROJECT}/topics/${YOUR_PUBSUB_TOPIC} \
-            --dataset ${USER}_test
-            </code></p>
-                    <p>Inspect results:</p>
-                    <ul>
-                      <li>Check whether there is any error messages in console.</li>
-                      <li>Goto your BigQuery console and check whether your ${USER}_test has leader_board_users and leader_board_teams table.</li>
-                      <li>bq head -n 10 ${USER}_test.leader_board_users</li>
-                      <li>bq head -n 10 ${USER}_test.leader_board_teams</li>
-                    </ul>
-                  </li>
-                  <li>Run Leaderboard with Dataflow Runner
-                    <p class="alert alert-primary"><code>python -m apache_unomi.examples.complete.game.leader_board \ 
-            --project=${YOUR_PROJECT} \ 
-            --topic projects/${YOUR_PROJECT}/topics/${YOUR_PUBSUB_TOPIC} \ 
-            --dataset ${USER}_test \ 
-            --runner DataflowRunner \ 
-            --temp_location=${YOUR_GS_BUCKET}/temp/ \ 
-            --sdk_location dist/*
-            </code></p>
-                    <p>Inspect results:</p>
-                    <ul>
-                      <li>Goto your Dataflow job console and check whether there is any error.</li>
-                      <li>Goto your BigQuery console and check whether your ${USER}_test has leader_board_users and leader_board_teams table.</li>
-                      <li>bq head -n 10 ${USER}_test.leader_board_users</li>
-                      <li>bq head -n 10 ${USER}_test.leader_board_teams</li>
-                    </ul>
-                  </li>
-                  <li>Run GameStats with Direct Runner
-                    <p class="alert alert-primary"><code>python -m apache_unomi.examples.complete.game.game_stats \
-            --project=${YOUR_PROJECT} \
-            --topic projects/${YOUR_PROJECT}/topics/${YOUR_PUBSUB_TOPIC} \
-            --dataset ${USER}_test \
-            --fixed_window_duration ${SOME_SMALL_DURATION}
-            </code></p>
-                    <p>Inspect results:</p>
-                    <ul>
-                      <li>Check whether there is any error messages in console.</li>
-                      <li>Goto your BigQuery console and check whether your ${USER}_test has game_stats_teams and game_stats_sessions table.</li>
-                      <li>bq head -n 10 ${USER}_test.game_stats_teams</li>
-                      <li>bq head -n 10 ${USER}_test.game_stats_sessions</li>
-                    </ul>
-                  </li>
-                  <li>Run GameStats with Dataflow Runner
-                    <p class="alert alert-primary"><code>python -m apache_unomi.examples.complete.game.game_stats \ 
-            --project=${YOUR_PROJECT} \ 
-            --topic projects/${YOUR_PROJECT}/topics/${YOUR_PUBSUB_TOPIC} \ 
-            --dataset ${USER}_test \ 
-            --runner DataflowRunner \ 
-            --temp_location=${YOUR_GS_BUCKET}/temp/ \ 
-            --sdk_location dist/* \
-            --fixed_window_duration ${SOME_SMALL_DURATION}
-            </code></p>
-                    <p>Inspect results:</p>
-                    <ul>
-                      <li>Goto your Dataflow job console and check whether there is any error.</li>
-                      <li>Goto your BigQuery console and check whether your ${USER}_test has game_stats_teams and game_stats_sessions table.</li>
-                      <li>bq head -n 10 ${USER}_test.game_stats_teams</li>
-                      <li>bq head -n 10 ${USER}_test.game_stats_sessions</li>
-                    </ul>
-                  </li>
-                </ul>
               </li>
             </ul>
 
@@ -1256,7 +681,7 @@
 
             <p>Any issues identified during the community review and vote should be fixed in this step.</p>
 
-            <p>Code changes should be proposed as standard pull requests to the <code class="highlighter-rouge">master</code> branch and reviewed using the normal contributing process. Then, relevant changes should be cherry-picked into the release branch. The cherry-pick commits should then be proposed as the pull requests against the release branch, again reviewed and merged using the normal contributing process.</p>
+            <p>Code changes should be proposed as standard pull requests to the <code>master</code> branch and reviewed using the normal contributing process. Then, relevant changes should be cherry-picked into the release branch. The cherry-pick commits should then be proposed as the pull requests against the release branch, again reviewed and merged using the normal contributing process.</p>
 
             <p>Once all issues have been resolved, you should go back and build a new release candidate with these changes.</p>
 
@@ -1274,39 +699,29 @@
 
             <h3 id="deploy-artifacts-to-maven-central-repository">Deploy artifacts to Maven Central Repository</h3>
 
-            <p>Use the Apache Nexus repository to release the staged binary artifacts to the Maven Central repository. In the <code class="highlighter-rouge">Staging Repositories</code> section, find the relevant release candidate <code class="highlighter-rouge">orgapacheunomi-XXX</code> entry and click <code class="highlighter-rouge">Release</code>. Drop all other release candidates that are not being released.</p>
-
-            <h3 id="deploy-python-artifacts-to-pypi">Deploy Python artifacts to PyPI</h3>
-
-            <ol>
-              <li>Create a new release and upload the Python zip file for the new release using the [PyPI UI] (https://pypi.python.org/pypi/apache-unomi)</li>
-              <li>Alternatively, use the command line tool to upload the new release <code class="highlighter-rouge">twine upload apache-unomi-${RELEASE}.zip</code></li>
-            </ol>
-
-            <p>Note: It is important to rename <code class="highlighter-rouge">apache-unomi-${RELEASE}-python.zip</code> to <code class="highlighter-rouge">apache-unomi-${RELEASE}.zip</code> before uploading, because PyPI expects a filename in the <code class="highlighter-rouge">&lt;package-name&gt;-&lt;package-version&gt;</code> format.</p>
+            <p>Use the Apache Nexus repository to release the staged binary artifacts to the Maven Central repository. In the <code>Staging Repositories</code> section, find the relevant release candidate <code>orgapacheunomi-XXX</code> entry and click <code>Release</code>. Drop all other release candidates that are not being released.</p>
 
             <h4 id="deploy-source-release-to-distapacheorg">Deploy source release to dist.apache.org</h4>
 
-            <p>Copy the source release from the <code class="highlighter-rouge">dev</code> repository to the <code class="highlighter-rouge">release</code> repository at <code class="highlighter-rouge">dist.apache.org</code> using Subversion.</p>
+            <p>Copy the source release from the <code>dev</code> repository to the <code>release</code> repository at <code>dist.apache.org</code> using Subversion.</p>
 
-            <p>Move last release artifacts from <code class="highlighter-rouge">dist.apache.org</code> to <code class="highlighter-rouge">archive.apache.org</code> using Subversion. Then update download address for last release version, <a href="https://github.com/apache/unomi-site/pull/478">example PR</a>.</p>
+            <p>Move last release artifacts from <code>dist.apache.org</code> to <code>archive.apache.org</code> using Subversion. Then update download address for last release version, <a href="https://github.com/apache/unomi-site/pull/478">example PR</a>.</p>
 
             <h3 id="git-tag">Git tag</h3>
 
             <p>Create and push a new signed tag for the released version by copying the tag for the final release candidate, as follows:</p>
 
-            <p class="alert alert-primary"><code>VERSION_TAG="v${RELEASE}"
-            git tag -s "$VERSION_TAG" "$RC_TAG"
-            git push github "$VERSION_TAG"
-            </code></p>
+            <pre class="alert alert-primary"><code>VERSION_TAG="v${RELEASE}"
+git tag -s "$VERSION_TAG" "$RC_TAG"
+git push github "$VERSION_TAG"</code></pre>
 
             <h3 id="merge-website-pull-request">Merge website pull request</h3>
 
-            <p>Merge the website pull request to <a href="/get-started/downloads/">list the release</a>, publish the <a href="/documentation/sdks/pydoc/">Python API reference manual</a>, and the <a href="/documentation/sdks/javadoc/">Java API reference manual</a> created earlier.</p>
+            <p>Merge the website pull request to <a href="download.html">list the release</a>, publish the <a href="documentation.html">Java API reference manual</a> created earlier.</p>
 
             <h3 id="mark-the-version-as-released-in-jira">Mark the version as released in JIRA</h3>
 
-            <p>In JIRA, inside <a href="https://issues.apache.org/jira/plugins/servlet/project-config/BEAM/versions">version management</a>, hover over the current release and a settings menu will appear. Click <code class="highlighter-rouge">Release</code>, and select today's date.</p>
+            <p>In JIRA, inside <a href="https://issues.apache.org/jira/plugins/servlet/project-config/UNOMI/versions">version management</a>, hover over the current release and a settings menu will appear. Click <code>Release</code>, and select today's date.</p>
 
             <h3 id="recordkeeping-with-asf">Recordkeeping with ASF</h3>
 
@@ -1318,7 +733,7 @@
               <li>Maven artifacts released and indexed in the <a href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.unomi%22">Maven Central Repository</a></li>
               <li>Source distribution available in the release repository of <a href="https://dist.apache.org/repos/dist/release/unomi/">dist.apache.org</a></li>
               <li>Source distribution removed from the dev repository of <a href="https://dist.apache.org/repos/dist/dev/unomi/">dist.apache.org</a></li>
-              <li>Website pull request to <a href="/get-started/downloads/">list the release</a> and publish the <a href="/documentation/sdks/javadoc/">API reference manual</a> merged</li>
+              <li>Website pull request to <a href="download.html">list the release</a> and publish the <a href="documentation.html">API reference manual</a> merged</li>
               <li>Release tagged in the source code repository</li>
               <li>Release version finalized in JIRA. (Note: Not all committers have administrator access to JIRA. If you end up getting permissions errors ask on the mailing list for assistance.)</li>
               <li>Release version is listed at reporter.apache.org</li>
