@@ -93,42 +93,55 @@
             </ul>
           </div>
           <div class="col-8 pt-3 offset-4">
-            <h2 class="pb-1">Apache Unomi Contribution Guide</h2>
-            <p>The Apache Unomi community welcomes contributions from anyone!</p>
-            <p>There are lots of opportunities:</p>
+            <h2 id="definitions">Pre-commit test policies</h2>
+
+            <h3>Definition</h3>
+
             <ul>
-              <li>ask or answer questions on dev@unomi.apache.org or Slack</li>
-              <li>review proposed design ideas on dev@unomi.apache.org</li>
-              <li>improve the documentation</li>
-              <li>contribute bug reports</li>
-              <li>write new examples</li>
+              <li>Pre-commit test - Any single test in a pre-commit test suite.</li>
+              <li>Pre-commit test suite - A collection of pre-commit tests that have a common denominator. A test suite runs in a single Jenkins job.</li>
             </ul>
 
-            <p>Most importantly, if you have an idea of how to contribute, then do it!</p>
+            <h3>Policies</h3>
 
-            <h3 class="pb-3 font-italic"><i class="fas fa-code-branch"></i> Source repository</h3>
-            <p>This project uses Git to manage its source code. Instructions on Git use can be found at <a href="https://git-scm.com/doc">https://git-scm.com/doc</a></p>
-            
-            <h4 class="pt-2">Web Browser Access</h4>
-            <p>The following is a link to a browsable version of the source repository:<br/>
-              <a href="https://git-wip-us.apache.org/repos/asf/incubator-unomi.git">https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</a>
-            </p>
+            <h4>Pull Requests</h4>
 
-            <h4 class="pt-2">Anonymous Access</h4>
-            <p>The source can be checked out anonymously from Git with this command (See <a href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a>):</p>
-            <p class="alert alert-primary">
-              <code>$ git clone https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</code>
-            </p>
+            <ul>
+              <li>A PR must pass pre-commit tests before being committed to the main Beam repo.
+                <ul>
+                  <li>The relevant pre-commit test suites are automatically launched according to PR contents.</li>
+                </ul>
+              </li>
+            </ul>
 
-            <h4 class="pt-2">Developer Access</h4>
-            <p>Only project developers can access the Git tree via this method (See <a href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a>):</p>
-            <p class="alert alert-primary">
-              <code>$ git clone https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</code>
-            </p>
+            <h4>Problems</h4>
 
-            <h4 class="pt-3">Access from Behind a Firewall</h4>
-            <p>Refer to the documentation of the SCM used for more information about access behind a firewall.</p>     
-          </div>
+            <h5>Breakage</h5>
+
+            <p>Breakage is when one or more tests in a pre-commit test suite fails or is flaky (occasionally fails).</p>
+
+            <ul>
+              <li>Breakages should be fixed within 8 hours.</li>
+            </ul>
+
+            <h5>Slowness</h5>
+
+            <p>Slowness is when the total time to run a pre-commit suite exceeds 30 minutes*, including the time the job spends in the Jenkins queue.</p>
+
+            <ul>
+              <li>Slowness should be fixed within 24 hours.</li>
+            </ul>
+
+            <h4>Problem Resolution</h4>
+
+            <p>For any problem, the options are, one of:</p>
+
+            <ul>
+              <li>Roll back the culprit PR.</li>
+              <li>Roll out a fix within 24 hours.</li>
+              <li>Disable the slow test or feature temporarily (make sure there is a tracking issue to re-enable it).</li>
+            </ul>
+
         </div>
       </div> 
     </main>

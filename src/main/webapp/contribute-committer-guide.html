@@ -93,41 +93,55 @@
             </ul>
           </div>
           <div class="col-8 pt-3 offset-4">
-            <h2 class="pb-1">Apache Unomi Contribution Guide</h2>
-            <p>The Apache Unomi community welcomes contributions from anyone!</p>
-            <p>There are lots of opportunities:</p>
-            <ul>
-              <li>ask or answer questions on dev@unomi.apache.org or Slack</li>
-              <li>review proposed design ideas on dev@unomi.apache.org</li>
-              <li>improve the documentation</li>
-              <li>contribute bug reports</li>
-              <li>write new examples</li>
-            </ul>
+            <h2>Committer Guide</h2>
 
-            <p>Most importantly, if you have an idea of how to contribute, then do it!</p>
+            <p>This guide is for <a href="https://www.apache.org/foundation/how-it-works.html#committers">committers</a> and covers Unomi's guidelines for reviewing and merging code.</p>
 
-            <h3 class="pb-3 font-italic"><i class="fas fa-code-branch"></i> Source repository</h3>
-            <p>This project uses Git to manage its source code. Instructions on Git use can be found at <a href="https://git-scm.com/doc">https://git-scm.com/doc</a></p>
-            
-            <h4 class="pt-2">Web Browser Access</h4>
-            <p>The following is a link to a browsable version of the source repository:<br/>
-              <a href="https://git-wip-us.apache.org/repos/asf/incubator-unomi.git">https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</a>
-            </p>
+            <h3>Always get to LGTM ("Looks good to me!")</h3>
 
-            <h4 class="pt-2">Anonymous Access</h4>
-            <p>The source can be checked out anonymously from Git with this command (See <a href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a>):</p>
+            <p>After a pull request goes through rounds of reviews and revisions, it will become ready for merge. A committer (who is <em>not</em> the author of the code) should signal this either by GitHub "approval" or by a comment such as "Looks good to me!" (LGTM). Any committer can then merge the pull request. It is fine for a committer to self-merge if another committer has reviewed the code and approved it, just be sure to be explicit about whose job it is!</p>
+
+            <p>Pull requests should not be merged before the review has received an explicit LGTM from another committer. Exceptions to this rule are rare and made on a
+            case-by-case basis. A committer may use their discretion for situations such as build breaks. In this case, you should still seek a review on the pull request! A common acronym you may see is "TBR" "to be reviewed".</p>
+
+            <p>Committers should never commit anything without going through a pull request, because that bypasses test coverage and could potentially cause the build to
+            fail. In addition, pull requests ensure that changes are communicated properly and potential flaws or improvements can be spotted.<strong>Always go through a pull request, even if you won't wait for the code review.</strong> Even then, reviewers can provide comments in the pull request after the merge happens, for use in follow-up pull requests.</p>
+
+            <h3>Contributor License Agreement</h3>
+
+            <p>If you are merging a larger contribution, please make sure that the contributor has an ICLA on file with the Apache Secretary. You can view the list of
+            committers <a href="http://home.apache.org/phonebook.html?unix=committers">here</a>, as well as <a href="http://home.apache.org/unlistedclas.html">ICLA-signers who aren't yet committers</a>.</p>
+
+            <p>For smaller contributions, however, this is not required. In this case, we rely on <a href="http://www.apache.org/licenses/LICENSE-2.0#contributions">clause five</a> of the Apache License, Version 2.0, describing licensing of intentionally submitted contributions.</p>
+
+            <h3>Tests</h3>
+
+            <p>Before merging, please make sure that Jenkins tests pass, as visible in the GitHub pull request. Do not merge the pull request if there are test failures.</p>
+
+            <p>If the pull request contains changes that call for extra test coverage, you can ask Jenkins to run an extended test suite. You can run the examples and some integration tests with "Run PostCommit".</p>
+
+            <h3>Finishing touches</h3>
+
+            <p>At some point in the review process, the change to the codebase will be  complete. However, the pull request may have a collection of review-related
+            commits that are not meaningful to preserve in the history. The reviewer should give the LGTM and then request that the author of the pull request rebase,
+            squash, split, etc, the commits, so that the history is most useful. Favor commits that do just one thing. The commit is the smallest unit of easy
+            rollback; it is easy to roll back many commits, or a whole pull request, but harder to roll back part of a commit.</p>
+
+            <h3>Merging it!</h3>
+
+            <p>After all the tests pass, there should be a green merge button at the bottom of the pull request.  There are multiple choices and you should choose "Merge pull request" (the default). This preserves the commit history and adds a merge commit, so be sure the commit history has been curated appropriately.</p>
+
+            <p>Do <em>not</em> use the default GitHub commit message, which looks like this:</p>
             <p class="alert alert-primary">
-              <code>$ git clone https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</code>
+              <code>Merge pull request #1234 from some_user/transient_branch_name [UNOMI-7873] Fix the foo bizzle bazzle</code>
             </p>
 
-            <h4 class="pt-2">Developer Access</h4>
-            <p>Only project developers can access the Git tree via this method (See <a href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a>):</p>
+            <p>Instead, pull it all into the subject line:</p>
             <p class="alert alert-primary">
-              <code>$ git clone https://git-wip-us.apache.org/repos/asf/incubator-unomi.git</code>
+              <code>Merge pull request #1234: [UNOMI-7873] Fix the foo bizzle bazzle</code>
             </p>
 
-            <h4 class="pt-3">Access from Behind a Firewall</h4>
-            <p>Refer to the documentation of the SCM used for more information about access behind a firewall.</p>     
+            <p>If you have comments to add, put them in the body of the commit message.</p>    
           </div>
         </div>
       </div> 

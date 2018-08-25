@@ -66,6 +66,14 @@ a:hover {
   font-size: 0.9em;
 }
 
+.sidenav-menu-sub-title {
+  padding-top: 5px;
+}
+
+.sidenav-menu-sub-list {
+    padding-left: 16px;
+}
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
