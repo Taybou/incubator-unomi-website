@@ -94,61 +94,52 @@
             </ul>
           </div>
           <div class="col-8 pt-3 offset-4">
-            <h2>Post-commit tests policies</h2>
+            <h2>Post-commit policies details</h2>
 
-            <p>Post-commit tests validate that Unomi works correctly in a live environment. The tests also catch errors that are hard to predict in the design and implementation stages</p>
+            <p>A post-commit test failure means that there is a bug in the code. The longer the bug exists, the harder it is to fix it due to ongoing code contributions. As a result, we want to fix bugs quickly. The Unomi community's post-commit test policies help keep our code and test results in a good state.</p>
 
-            <p>Even though post-commit tests run after the code is merged into the repository,  it is important that the tests pass reliably. Jenkins executes post-commit tests against the HEAD of the master branch. If post-commit tests fail, there is a problem with the HEAD build. In addition, post-commit tests are time consuming to run, and it is often hard to triage test failures.</p>
+            <h3 id="rollback_first">Rollback first</h3>
 
-            <h3>Policies</h3>
+            <p>Unomi uses a "rollback first" approach: the first action to resolve a test failure is to rollback the culprit code change. The two main benefits of this
+            approach are short implementation time and high reliability. When we rollback first, we quickly return to a previously verified good state.</p>
 
-            <p>To ensure that Unomi's post-commit tests are reliable and healthy, the Unomi community follows these post-commit test policies:</p>
-
-            <ul>
-              <li><a href="contribute-post-commit-policies-details.html#rollback_first">Rollback first</a></li>
-              <li><a href="contribute-post-commit-policies-details.html#failing_test_is_critical_bug">A failing test is a critical bug</a></li>
-              <li><a href="contribute-post-commit-policies-details.html#flake_is_failing">A flaky test is a critical bug</a></li>
-              <li><a href="contribute-post-commit-policies-details.html#remove_flake">Flaky tests must either be fixed or removed</a></li>
-              <li><a href="contribute-post-commit-policies-details.html#precommit_for_postcommit">Fixes for post-commit failures should include a corresponding new pre-commit test</a></li>
-            </ul>
-
-            <h3>Post-commit test failure scenarios</h3>
-
-            <p>When a post-commit test fails, follow the provided steps for your situation.</p>
-
-            <h4>I found a test failure</h4>
+            <p>At a high level, this approach consists of the following steps:</p>
 
             <ol>
-              <li>Create a <a href="https://issues.apache.org/jira/issues/?jql=project%20%3D%20UNOMI%20AND%20component%20%3D%20test-failures">JIRA issue</a> and assign it to yourself.</li>
-              <li>Do high level triage of the failure.</li>
-              <li><a href="contribute-post-commit-guides.html#find_specialist">Assign the JIRA issue to a relevant person</a>.</li>
+              <li>Revert the culprit commit.</li>
+              <li>Re-run the post-commit tests to verify the tests pass.</li>
+              <li>Push the revert commit.</li>
             </ol>
 
-            <h4>I was assigned a JIRA issue for a test failure</h4>
+            <h3 id="failing_test_is_critical_bug">A failing test is a critical/P1 issue</h3>
 
-            <ol>
-              <li><a href="contribute-post-commit-guides.html#rollback">Rollback the culprit change</a>.</li>
-              <li>If you determine that rollback will take longer than 8 hours, <a href="contribute-post-commit-guides.html#disabling">disable the test temporarily</a> while you rollback or create a fix.</li>
-            </ol>
+            <p>It is difficult to properly verify new changes made on top of buggy code. In some cases, adding additional code can make the problem worse. To avoid this situation, fixing failing tests is our highest priority.</p>
 
-            <blockquote>
-              <p>Note: Rollback is always the first course of action. If a fix is trivial, open a pull request with the proposed fix while doing rollback.</p>
-            </blockquote>
+            <h3 id="flake_is_failing">A flaky test is a critical/P1 issue</h3>
 
-            <h4>My change was rolled back due to a test failure</h4>
+            <p>Flaky tests are considered failing tests, and fixing a flaky test is a critical/P1 issue.</p>
 
-            <ol>
-              <li>Look at the JIRA issue to find the reason for the rollback.</li>
-              <li>Fix your code and re-run the post-commit tests.</li>
-              <li>Implement new pre-commit tests that will catch similar bugs before future code is merged into the repository.</li>
-              <li>Open a new PR that contains your fix and the new pre-commit tests.</li>
-            </ol>
+            <p>Flaky tests are tests that randomly succeed or fail while using the same code version. Flaky test failures are one of the most dangerous types of failures
+            because they are easy to ignore â€“ another run of the flaky test might pass successfully. However, these failures can hide real bugs and flaky tests often
+            slowly accumulate. Someone must repeatedly triage the failures, and flaky tests are often the hardest ones to fix.</p>
 
-            <h3>Useful links</h3>
+            <p>Flaky tests do not provide a reliable quality signal, so it is important to quickly fix the flakiness. If a fix will take awhile to implement, it is safer
+            to disable the test until the fix is ready.</p>
 
-            <ul>
-              <li><a href="contribute-testing.html#best_practices">Best practices for writing tests</a></li>
-            </ul>
+            <p>Martin Fowler has a good <a href="https://martinfowler.com/articles/nonDeterminism.html">article</a> about non-determinism in tests.</p>
+
+            <h3 id="remove_flake">Flaky tests must be fixed or removed</h3>
+
+            <p>Flaky tests do not provide a reliable quality signal, which has a harmful effect on all tests and can lead to a loss of trust in our test suite. As a result, contributors might start to ignore test failures.</p>
+
+            <p>We want everyone to trust our tests, so it is important to diligently fix all laky tests. If it is not possible to fix a flaky test, we must remove the test.</p>
+
+            <h3 id="precommit_for_postcommit">Add new pre-commit tests as part of a post-commit fix</h3>
+
+            <p>Post-commit tests are an important fail-safe, but we want to fail fast. Failing fast means that we want to detect bugs in pre-commit tests, and <em>not</em> in post-commit tests.</p>
+
+            <p>When you implement a fix for a post-commit test failure, add a new pre-commit test that will detect similar failures in the future. For example, you can
+            implement a new unit test that covers a problematic code branch.</p>
           </div>
         </div>
       </div> 
