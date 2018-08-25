@@ -40,11 +40,11 @@
                 <li class="nav-item">
                   <a class="nav-link" href="documentation.html">Documentation</a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="contribute.html">Contribute <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="community.html">Community</a>
+                  <a class="nav-link" href="contribute.html">Contribute</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="community.html">Community <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link disabled" href="https://www.apache.org"><img src="images/apache-feather-tm-new.png"/></a>
@@ -58,103 +58,31 @@
 
     <main role="main">
 
-      <!-- Marketing messaging and featurettes
-      ================================================== -->
-      <!-- Wrap the rest of the page in another container to center all the content. -->
+      <div class="container mb-5 pt-5">
+        <div class="col-2 sidenav-menu pt-3">
+          <div class="pb-3 text-uppercase"><strong>Community</strong></div>
+          <ul class="list-unstyled mb-3">
+            <li><a href="community.html">Contact Us</a></li>
+            <li><a href="community-policies.html">Policies</a></li>
+            <li><a href="community-maturity-model-report.html">Maturity model report card</a></li>
+            <li><a href="community-team.html">Team</a></li>
+          </ul>
+        </div>
 
-      <div class="container">
-        <!-- CONTRIBUTE -->
-        <div class="row mb-5 mt-5 pt-3">
-          <div class="col-2 sidenav-menu pt-3">
-            <div class="pb-3 text-uppercase"><strong>Contribute</strong></div>
-            <ul class="list-unstyled mb-3">
-              <li><a href="contribute.html">Get started contributing</a></li>
-              <li class="sidenav-menu-sub-title">Technical Docs</li>
-              <li>
-                <ul class="list-unstyled sidenav-menu-sub-list">
-                  <li><a href="contribute-dependencies-guide.html">Dependencies guide</a></li>
-                </ul>
-              </li>
-              <li class="sidenav-menu-sub-title">Policies</li>
-              <li>
-                <ul class="list-unstyled sidenav-menu-sub-list">
-                  <li><a href="contribute-pre-commit-test-policies.html">Pre-commit test policies</a></li>
-                  <li><a href="contribute-post-commit-test-policies.html">Post-commit test policies</a></li>
-                </ul>
-              </li>
-              <li class="sidenav-menu-sub-title">Committers</li>
-              <li>
-                <ul class="list-unstyled sidenav-menu-sub-list">
-                  <li><a href="contribute-become-a-committer.html">Become a committer</a></li>
-                  <li><a href="contribute-committer-guide.html">Committer guide</a></li>
-                  <li><a href="contribute-release-guide.html">Release guide</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="col-8 pt-3 offset-4">
-            <h2>Post-commit tests policies</h2>
+        <div class="col-8 pt-3 offset-4">
+          <h2 class="pb-3 mb-2"> Policies</h2>
 
-            <p>Post-commit tests validate that Unomi works correctly in a live environment. The tests also catch errors that are hard to predict in the design and implementation stages</p>
+          <p>This page contains a list of major policies agreed upon by the Apache Unomi community.</p>
 
-            <p>Even though post-commit tests run after the code is merged into the repository,  it is important that the tests pass reliably. Jenkins executes post-commit tests against the HEAD of the master branch. If post-commit tests fail, there is a problem with the HEAD build. In addition, post-commit tests are time consuming to run, and it is often hard to triage test failures.</p>
+          <h3 id="releases">Releases</h3>
 
-            <h3>Policies</h3>
+          <p>Apache Unomi makes minor releases every 6 weeks. Apache Unomi has a <a href="https://calendar.google.com/calendar/embed?src=0p73sl034k80oob7seouanigd0%40group.calendar.google.com">calendar</a> for cutting the next release branch. After a release branch is cut, the community works quickly to finalize that release.</p>
 
-            <p>To ensure that Unomi's post-commit tests are reliable and healthy, the Unomi community follows these post-commit test policies:</p>
+          <p>Apache Unomi aims to make 8 releases in a 12 month period. To accommodate users with longer upgrade cycles, some of these releases will be tagged as long term support (LTS) releases. LTS releases receive patches to fix major issues for 12 months, starting from the releaseâ€™s initial release date. There will be at least one new LTS release in a 12 month period, and LTS releases are considered deprecated after 12 months. The community will mark a release as a LTS release based on various factors, such as the number of LTS releases currently in flight and whether the accumulated feature set since the last LTS provides significant upgrade value. Non-LTS releases do not receive patches and are considered deprecated immediately after the next following minor release. We encourage you to update early and often; do not wait until the deprecation date of the version you are using.</p>
 
-            <ul>
-              <li><a href="/contribute/postcommits-policies-details.html#rollback_first">Rollback first</a></li>
-              <li><a href="/contribute/postcommits-policies-details.html#failing_test_is_critical_bug">A failing test is a critical bug</a></li>
-              <li><a href="/contribute/postcommits-policies-details.html#flake_is_failing">A flaky test is a critical bug</a></li>
-              <li><a href="/contribute/postcommits-policies-details.html#remove_flake">Flaky tests must either be fixed or removed</a></li>
-              <li><a href="/contribute/postcommits-policies-details.html#precommit_for_postcommit">Fixes for post-commit failures should include a corresponding new pre-commit test</a></li>
-            </ul>
+          <p>It is up to the Apache Unomi community to decide whether an identified issue is a major issue that warrants a patch release. Some examples of major issues are high severity security issues and high risk data integrity issues.</p>
 
-            <h3>Post-commit test failure scenarios</h3>
-
-            <p>When a post-commit test fails, follow the provided steps for your situation.</p>
-
-            <h4>I found a test failure</h4>
-
-            <ol>
-              <li>Create a <a href="https://issues.apache.org/jira/issues/?jql=project%20%3D%20UNOMI%20AND%20component%20%3D%20test-failures">JIRA issue</a> and assign it to yourself.</li>
-              <li>Do high level triage of the failure.</li>
-              <li><a href="/contribute-postcommits-guides.html#find_specialist">Assign the JIRA issue to a relevant person</a>.</li>
-            </ol>
-
-            <h4>I was assigned a JIRA issue for a test failure</h4>
-
-            <ol>
-              <li><a href="/contribute-postcommits-guides.html#rollback">Rollback the culprit change</a>.</li>
-              <li>If you determine that rollback will take longer than 8 hours, <a href="/contribute-postcommits-guides.html#disabling">disable the test temporarily</a> while you rollback or create a fix.</li>
-            </ol>
-
-            <blockquote>
-              <p>Note: Rollback is always the first course of action. If a fix is trivial, open a pull request with the proposed fix while doing rollback.</p>
-            </blockquote>
-
-            <h4>My change was rolled back due to a test failure</h4>
-
-            <ol>
-              <li>Look at the JIRA issue to find the reason for the rollback.</li>
-              <li>Fix your code and re-run the post-commit tests.</li>
-              <li>Implement new pre-commit tests that will catch similar bugs before future code is merged into the repository.</li>
-              <li>Open a new PR that contains your fix and the new pre-commit tests.</li>
-            </ol>
-
-            <h3>Useful links</h3>
-
-            <ul>
-              <li><a href="/contribute-testing.html#best_practices">Best practices for writing tests</a></li>
-            </ul>
-
-            <h3>References</h3>
-
-            <ol>
-              <li><a href="https://lists.apache.org/thread.html/3bb4aa777751da2e2d7e22666aa6a2e18ae31891cb09d91718b75e74@%3Cdev.unomi.apache.org%3E">Keeping post-commit tests green</a> mailing list proposal thread.</li>
-            </ol> 
-          </div>
+          <p>If you wish to report a security vulnerability, please contact <a href="mailto:security@apache.org">security@apache.org</a>. Apache Unomi follows the typical <a href="https://apache.org/security/committers.html#vulnerability-handling">Apache vulnerability handling process</a>.</p>
         </div>
       </div> 
     </main>
