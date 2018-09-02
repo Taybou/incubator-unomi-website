@@ -47,7 +47,7 @@
                   <a class="nav-link" href="community.html">Community</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="https://www.apache.org"><img src="images/apache-feather-tm-new.png"/></a>
+                  <a class="nav-link disabled" target="_blank" href="https://www.apache.org"><img src="images/apache-feather-tm-new.png"/></a>
                 </li>
               </ul>
             <div>
@@ -102,7 +102,7 @@
 
             <p>Each release is executed by a <em>Release Manager</em>, who is selected among the Unomi committers. This document describes the process that the Release Manager follows to perform a release. Any changes to this process should be discussed and adopted on the <a href="community.html">dev@ mailing list</a>.</p>
 
-            <p>Please remember that publishing software has legal consequences. This guide complements the foundation-wide <a href="http://www.apache.org/dev/release.html">Product Release Policy</a> and <a href="http://www.apache.org/dev/release-distribution">Release Distribution Policy</a>.</p>
+            <p>Please remember that publishing software has legal consequences. This guide complements the foundation-wide <a target="_blank" href="http://www.apache.org/dev/release.html">Product Release Policy</a> and <a target="_blank" href="http://www.apache.org/dev/release-distribution">Release Distribution Policy</a>.</p>
 
             <h2 id="overview">Overview</h2>
 
@@ -150,7 +150,7 @@
 
             <h4 id="gpg-key">GPG Key</h4>
 
-            <p>You need to have a GPG key to sign the release artifacts. Please be aware of the ASF-wide <a href="https://www.apache.org/dev/release-signing.html">release signing guidelines</a>. If you don't have a GPG key associated with your Apache account, please create one according to the guidelines.</p>
+            <p>You need to have a GPG key to sign the release artifacts. Please be aware of the ASF-wide <a target="_blank" href="https://www.apache.org/dev/release-signing.html">release signing guidelines</a>. If you don't have a GPG key associated with your Apache account, please create one according to the guidelines.</p>
 
             <p>There are 2 ways to configure your GPG key for release, either using release automation script(which is recommended), 
             or running all commands manually.</p>
@@ -158,7 +158,7 @@
             <h5 id="use-preparation_before_releasesh-to-setup-gpg">Use preparation_before_release.sh to setup GPG</h5>
             <ul>
               <li>
-                <p>Script: <a href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/preparation_before_release.sh">preparation_before_release.sh</a></p>
+                <p>Script: <a target="_blank" href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/preparation_before_release.sh">preparation_before_release.sh</a></p>
               </li>
               <li>Usage
                 <pre class="alert alert-primary"><code>./unomi/release/src/main/scripts/preparation_before_release.sh</code></pre>
@@ -170,9 +170,9 @@
                     <pre class="alert alert-primary"><code>git user.signingkey</code></pre> 
                     with chosen pubkey.</li>
                   <li>
-                    <p>Add chosen pubkey into <a href="https://dist.apache.org/repos/dist/dev/unomi/KEYS">dev KEYS</a>  and <a href="https://dist.apache.org/repos/dist/release/unomi/KEYS">release KEYS</a></p>
+                    <p>Add chosen pubkey into <a target="_blank" href="https://dist.apache.org/repos/dist/dev/unomi/KEYS">dev KEYS</a>  and <a target="_blank" href="https://dist.apache.org/repos/dist/release/unomi/KEYS">release KEYS</a></p>
 
-                    <p><strong>NOTES</strong>: Only PMC can write into <a href="https://dist.apache.org/repos/dist/release/unomi/">release repo</a>.</p>
+                    <p><strong>NOTES</strong>: Only PMC can write into <a target="_blank" href="https://dist.apache.org/repos/dist/release/unomi/">release repo</a>.</p>
                   </li>
                   <li>Start GPG agents.</li>
                 </ol>
@@ -206,7 +206,7 @@ sub   2048R/BA4D50BE 2016-02-23</code></pre>
 
                 <p>Here, the key ID is the 8-digit hex string in the <code>pub</code> line: <code>845E6689</code>.</p>
 
-                <p>Now, add your Apache GPG key to the Unomi's <code>KEYS</code> file both in <a href="https://dist.apache.org/repos/dist/dev/unomi/KEYS"><code>dev</code></a> and <a href="https://dist.apache.org/repos/dist/release/unomi/KEYS"><code>release</code></a> repositories at <code>dist.apache.org</code>. Follow the instructions listed at the top of these files. (Note: Only PMC members have write access to the release repository. If you end up getting 403 errors ask on the mailing list for assistance.)</p>
+                <p>Now, add your Apache GPG key to the Unomi's <code>KEYS</code> file both in <a target="_blank" href="https://dist.apache.org/repos/dist/dev/unomi/KEYS"><code>dev</code></a> and <a target="_blank" href="https://dist.apache.org/repos/dist/release/unomi/KEYS"><code>release</code></a> repositories at <code>dist.apache.org</code>. Follow the instructions listed at the top of these files. (Note: Only PMC members have write access to the release repository. If you end up getting 403 errors ask on the mailing list for assistance.)</p>
               </li>
               <li>
                 <p>Configure <code>git</code> to use this key when signing code by giving it your key ID, as follows:</p>
@@ -226,7 +226,7 @@ export GPG_AGENT_INFO</code></pre>
 
             <h4 id="access-to-apache-nexus-repository">Access to Apache Nexus repository</h4>
 
-            <p>Configure access to the <a href="http://repository.apache.org/">Apache Nexus repository</a>, which enables final deployment of releases to the Maven Central Repository.</p>
+            <p>Configure access to the <a target="_blank" href="http://repository.apache.org/">Apache Nexus repository</a>, which enables final deployment of releases to the Maven Central Repository.</p>
 
             <ol>
               <li>You log in with your Apache account.</li>
@@ -264,7 +264,7 @@ export GPG_AGENT_INFO</code></pre>
             <p>Attention: Only committer has permission to perform this.</p>
 
             <ol>
-              <li>In JIRA, navigate to the <a href="https://issues.apache.org/jira/plugins/servlet/project-config/UNOMI/versions"><code>Unomi &gt; Administration &gt; Versions</code></a>.</li>
+              <li>In JIRA, navigate to the <a target="_blank" href="https://issues.apache.org/jira/plugins/servlet/project-config/UNOMI/versions"><code>Unomi &gt; Administration &gt; Versions</code></a>.</li>
               <li>Add a new release: choose the next minor version number compared to the one currently underway, select today's date as the <code>Start Date</code>, and choose <code>Add</code>.</li>
             </ol>
 
@@ -272,7 +272,7 @@ export GPG_AGENT_INFO</code></pre>
 
             <p>There could be outstanding release-blocking issues, which should be triaged before proceeding to build a release candidate. We track them by assigning a specific <code>Fix version</code> field even before the issue resolved.</p>
 
-            <p>The list of release-blocking issues is available at the <a href="https://issues.apache.org/jira/browse/UNOMI/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel">version status page</a>. Triage each unresolved issue with one of the following resolutions:</p>
+            <p>The list of release-blocking issues is available at the <a target="_blank" href="https://issues.apache.org/jira/browse/UNOMI/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel">version status page</a>. Triage each unresolved issue with one of the following resolutions:</p>
 
             <ul>
               <li>If the issue has been resolved and JIRA was not updated, resolve it accordingly.</li>
@@ -284,7 +284,7 @@ export GPG_AGENT_INFO</code></pre>
 
             <p>JIRA automatically generates Release Notes based on the <code>Fix Version</code> field applied to issues. Release Notes are intended for Unomi users (not Unomi committers/contributors). You should ensure that Release Notes are informative and useful.</p>
 
-            <p>Open the release notes from the <a href="https://issues.apache.org/jira/browse/UNOMI/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel">version status page</a> by choosing the release underway and clicking Release Notes.</p>
+            <p>Open the release notes from the <a target="_blank" href="https://issues.apache.org/jira/browse/UNOMI/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel">version status page</a> by choosing the release underway and clicking Release Notes.</p>
 
             <p>You should verify that the issues listed automatically by JIRA are appropriate to appear in the Release Notes. Specifically, issues should:</p>
 
@@ -308,7 +308,7 @@ export GPG_AGENT_INFO</code></pre>
             <h4 id="use-cut_release_branchsh-to-cut-a-release-branch">Use cut_release_branch.sh to cut a release branch</h4>
             <ul>
               <li>
-                <p>Script: <a href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/cut_release_branch.sh">cut_release_branch.sh</a></p>
+                <p>Script: <a target="_blank" href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/cut_release_branch.sh">cut_release_branch.sh</a></p>
               </li>
               <li>Usage
                 <pre class="alert alert-primary"><code># Cut a release branch
@@ -383,14 +383,14 @@ git commit -m "Moving to ${NEXT_VERSION_IN_BASE_BRANCH}-SNAPSHOT on master branc
 
             <h3 id="start-a-snapshot-build">Start a snapshot build</h3>
 
-            <p>Start a build of <a href="https://builds.apache.org/view/A-D/view/Unomi/job/unomi_Release_NightlySnapshot/">the nightly snapshot</a> against master branch. Some processes, including our archetype tests, rely on having a live SNAPSHOT of the current version from the <code>master</code> branch. Once the release branch is cut, these SNAPSHOT versions are no longer found, so builds will be broken until a new snapshot is available.</p>
+            <p>Start a build of <a target="_blank" href="https://builds.apache.org/view/A-D/view/Unomi/job/unomi_Release_NightlySnapshot/">the nightly snapshot</a> against master branch. Some processes, including our archetype tests, rely on having a live SNAPSHOT of the current version from the <code>master</code> branch. Once the release branch is cut, these SNAPSHOT versions are no longer found, so builds will be broken until a new snapshot is available.</p>
 
             <p>There are 2 ways to trigger a nightly build, either using automation script(recommended), or perform all operations manually.</p>
 
             <h4 id="run-start_snapshot_buildsh-to-trigger-build">Run start_snapshot_build.sh to trigger build</h4>
             <ul>
               <li>
-                <p>Script: <a href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/start_snapshot_build.sh">start_snapshot_build.sh</a></p>
+                <p>Script: <a target="_blank" href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/start_snapshot_build.sh">start_snapshot_build.sh</a></p>
               </li>
               <li>
                 <p>Usage</p>
@@ -399,7 +399,7 @@ git commit -m "Moving to ${NEXT_VERSION_IN_BASE_BRANCH}-SNAPSHOT on master branc
               </li>
               <li>Tasks included
                 <ol>
-                  <li>Install <a href="https://github.com/github/hub">hub</a> with your agreement.</li>
+                  <li>Install <a target="_blank" href="https://github.com/github/hub">hub</a> with your agreement.</li>
                   <li>Touch an empty txt file and commit changes into <code>${your remote unomi repo}/snapshot_build</code></li>
                   <li>Use hub to create a PR against apache:master, which triggers a Jenkins job to build snapshot.</li>
                 </ol>
@@ -427,7 +427,7 @@ git commit -m "Moving to ${NEXT_VERSION_IN_BASE_BRANCH}-SNAPSHOT on master branc
             <h4 id="run-verify_release_buildsh-to-verity-a-release-build">Run verify_release_build.sh to verity a release build</h4>
             <ul>
               <li>
-                <p>Script: <a href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/verify_release_build.sh">verify_release_build.sh</a></p>
+                <p>Script: <a target="_blank" href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/verify_release_build.sh">verify_release_build.sh</a></p>
               </li>
               <li>
                 <p>Usage</p>
@@ -496,7 +496,7 @@ git commit -m "Moving to ${NEXT_VERSION_IN_BASE_BRANCH}-SNAPSHOT on master branc
             <h3 id="run-build_release_candidatesh-to-create-rc">Run build_release_candidate.sh to create RC</h3>
             <ul>
               <li>
-                <p>Script: <a href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/build_release_candidate.sh">build_release_candidate.sh</a></p>
+                <p>Script: <a target="_blank" href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/build_release_candidate.sh">build_release_candidate.sh</a></p>
               </li>
               <li>
                 <p>Usage</p>
@@ -506,12 +506,12 @@ git commit -m "Moving to ${NEXT_VERSION_IN_BASE_BRANCH}-SNAPSHOT on master branc
                 <ol>
                   <li>Run gradle release to create rc tag and push source release into github repo.</li>
                   <li>Run gradle publish to push java artifacts into Maven staging repo.</li>
-                  <li>Stage source release into dist.apache.org dev <a href="https://dist.apache.org/repos/dist/dev/unomi/">repo</a>.</li>
+                  <li>Stage source release into dist.apache.org dev <a target="_blank" href="https://dist.apache.org/repos/dist/dev/unomi/">repo</a>.</li>
                   <li>Stage,sign and hash python binaries into dist.apache.ord dev repo python dir</li>
                   <li>Create a PR to update unomi-site, changes includes:
                     <ul>
                       <li>Copy java doc into unomi-site</li>
-                      <li>Update release version into <a href="https://github.com/apache/unomi-site/blob/asf-site/_config.yml">_config.yml</a>.</li>
+                      <li>Update release version into <a target="_blank" href="https://github.com/apache/unomi-site/blob/asf-site/_config.yml">_config.yml</a>.</li>
                     </ul>
                   </li>
                 </ol>
@@ -550,8 +550,8 @@ git commit -m "Moving to ${NEXT_VERSION_IN_BASE_BRANCH}-SNAPSHOT on master branc
             <h4 id="checklist-to-proceed-to-the-next-step-2">Checklist to proceed to the next step</h4>
 
             <ol>
-              <li>Maven artifacts deployed to the staging repository of <a href="https://repository.apache.org/content/repositories/">repository.apache.org</a></li>
-              <li>Source distribution deployed to the dev repository of <a href="https://dist.apache.org/repos/dist/dev/unomi/">dist.apache.org</a></li>
+              <li>Maven artifacts deployed to the staging repository of <a target="_blank" href="https://repository.apache.org/content/repositories/">repository.apache.org</a></li>
+              <li>Source distribution deployed to the dev repository of <a target="_blank" href="https://dist.apache.org/repos/dist/dev/unomi/">dist.apache.org</a></li>
               <li>Website pull request proposed to list the <a href="/get-started/downloads/">release</a>, publish the <a href="/documentation/sdks/javadoc/">Java API reference manual</a>, and publish the <a href="/documentation/sdks/pydoc/">Python API reference manual</a>.</li>
             </ol>
 
@@ -568,7 +568,7 @@ git commit -m "Moving to ${NEXT_VERSION_IN_BASE_BRANCH}-SNAPSHOT on master branc
 
             <h2 id="vote-on-the-release-candidate">Vote on the release candidate</h2>
 
-            <p>Once you have built and individually reviewed the release candidate, please share it for the community-wide review. Please review foundation-wide <a href="http://www.apache.org/foundation/voting.html">voting guidelines</a> for more information.</p>
+            <p>Once you have built and individually reviewed the release candidate, please share it for the community-wide review. Please review foundation-wide <a target="_blank" href="http://www.apache.org/foundation/voting.html">voting guidelines</a> for more information.</p>
 
             <p>Start the review-and-vote thread on the dev@ mailing list. Here's an email template; please adjust as you see fit.</p>
 
@@ -624,14 +624,14 @@ There are no disapproving votes.
 Thanks everyone!</code></pre>
 
             <h3 id="run-validation-tests">Run validation tests</h3>
-            <p>All tests listed in this <a href="https://s.apache.org/unomi-release-validation">spreadsheet</a></p>
+            <p>All tests listed in this <a target="_blank" href="https://s.apache.org/unomi-release-validation">spreadsheet</a></p>
 
             <p>Since there are a bunch of tests, we recommend you running validations using automation script. In case of script failure, you can still run all of them manually.</p>
 
             <h4 id="run-validations-using-run_rc_validationsh">Run validations using run_rc_validation.sh</h4>
             <ul>
               <li>
-                <p>Script: <a href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/run_rc_validation.sh">run_rc_validation.sh</a></p>
+                <p>Script: <a target="_blank" href="https://github.com/apache/unomi/blob/master/release/src/main/scripts/run_rc_validation.sh">run_rc_validation.sh</a></p>
               </li>
               <li>
                 <p>Usage</p>
@@ -646,7 +646,7 @@ Thanks everyone!</code></pre>
               <li>Tasks you need to do manually
                 <ol>
                   <li>Check whether validations succeed by following console output instructions.</li>
-                  <li>Sign up <a href="https://s.apache.org/unomi-release-validation">spreadsheet</a>.</li>
+                  <li>Sign up <a target="_blank" href="https://s.apache.org/unomi-release-validation">spreadsheet</a>.</li>
                   <li>Vote in the release thread.</li>
                 </ol>
               </li>
@@ -705,7 +705,7 @@ Thanks everyone!</code></pre>
 
             <p>Copy the source release from the <code>dev</code> repository to the <code>release</code> repository at <code>dist.apache.org</code> using Subversion.</p>
 
-            <p>Move last release artifacts from <code>dist.apache.org</code> to <code>archive.apache.org</code> using Subversion. Then update download address for last release version, <a href="https://github.com/apache/unomi-site/pull/478">example PR</a>.</p>
+            <p>Move last release artifacts from <code>dist.apache.org</code> to <code>archive.apache.org</code> using Subversion. Then update download address for last release version, <a target="_blank" href="https://github.com/apache/unomi-site/pull/478">example PR</a>.</p>
 
             <h3 id="git-tag">Git tag</h3>
 
@@ -721,7 +721,7 @@ git push github "$VERSION_TAG"</code></pre>
 
             <h3 id="mark-the-version-as-released-in-jira">Mark the version as released in JIRA</h3>
 
-            <p>In JIRA, inside <a href="https://issues.apache.org/jira/plugins/servlet/project-config/UNOMI/versions">version management</a>, hover over the current release and a settings menu will appear. Click <code>Release</code>, and select today's date.</p>
+            <p>In JIRA, inside <a target="_blank" href="https://issues.apache.org/jira/plugins/servlet/project-config/UNOMI/versions">version management</a>, hover over the current release and a settings menu will appear. Click <code>Release</code>, and select today's date.</p>
 
             <h3 id="recordkeeping-with-asf">Recordkeeping with ASF</h3>
 
@@ -730,9 +730,9 @@ git push github "$VERSION_TAG"</code></pre>
             <h3 id="checklist-to-proceed-to-the-next-step-4">Checklist to proceed to the next step</h3>
 
             <ul>
-              <li>Maven artifacts released and indexed in the <a href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.unomi%22">Maven Central Repository</a></li>
-              <li>Source distribution available in the release repository of <a href="https://dist.apache.org/repos/dist/release/unomi/">dist.apache.org</a></li>
-              <li>Source distribution removed from the dev repository of <a href="https://dist.apache.org/repos/dist/dev/unomi/">dist.apache.org</a></li>
+              <li>Maven artifacts released and indexed in the <a target="_blank" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.unomi%22">Maven Central Repository</a></li>
+              <li>Source distribution available in the release repository of <a target="_blank" href="https://dist.apache.org/repos/dist/release/unomi/">dist.apache.org</a></li>
+              <li>Source distribution removed from the dev repository of <a target="_blank" href="https://dist.apache.org/repos/dist/dev/unomi/">dist.apache.org</a></li>
               <li>Website pull request to <a href="download.html">list the release</a> and publish the <a href="documentation.html">API reference manual</a> merged</li>
               <li>Release tagged in the source code repository</li>
               <li>Release version finalized in JIRA. (Note: Not all committers have administrator access to JIRA. If you end up getting permissions errors ask on the mailing list for assistance.)</li>
@@ -761,7 +761,7 @@ git push github "$VERSION_TAG"</code></pre>
 
             <p>Tweet, post on Facebook, LinkedIn, and other platforms. Ask other contributors to do the same.</p>
 
-            <p>Also, update <a href="https://en.wikipedia.org/wiki/Apache_Unomi">the Wikipedia article on Apache Unomi</a>.</p>
+            <p>Also, update <a target="_blank" href="https://en.wikipedia.org/wiki/Apache_Unomi">the Wikipedia article on Apache Unomi</a>.</p>
 
             <h3 id="checklist-to-declare-the-process-completed">Checklist to declare the process completed</h3>
 
@@ -823,11 +823,11 @@ git push github "$VERSION_TAG"</code></pre>
           <div class="col-3 col-md-3">
             <h5>About</h5>
             <ul class="list-unstyled text-small">
-              <li><a href="https://www.oasis-open.org/committees/cxs/" title="OASIS Context Server Technical Committee">OASIS CXS Committee</a></li>
+              <li><a target="_blank" href="https://www.oasis-open.org/committees/cxs/" title="OASIS Context Server Technical Committee">OASIS CXS Committee</a></li>
               <li><a href="privacy-policy.html" title="Site policy">Site policy</a></li>
               <li><a href="license.html" title="Licenses">Licenses</a></li>
-              <li><a href="https://www.apache.org/foundation/sponsorship.html" title="Sponsorship">Sponsorship</a></li>
-              <li><a href="https://www.apache.org/foundation/thanks.html" title="Thanks">Thanks</a></li>
+              <li><a target="_blank" href="https://www.apache.org/foundation/sponsorship.html" title="Sponsorship">Sponsorship</a></li>
+              <li><a target="_blank" href="https://www.apache.org/foundation/thanks.html" title="Thanks">Thanks</a></li>
             </ul>
           </div>
           <div class="w-100 pt-md-3"></div>
@@ -835,7 +835,7 @@ git push github "$VERSION_TAG"</code></pre>
       </div>
       
       <p class="float-right"><a href="#">Back to top</a></p>
-      <p>Copyright &copy;2014 - 2018 <a href="https://www.apache.org">Apache Software Foundation</a> - All Rights Reserved - Powered by <a href="https://karaf.apache.org">Apache Karaf</a><br/>
+      <p>Copyright &copy;2014 - 2018 <a target="_blank" href="https://www.apache.org">Apache Software Foundation</a> - All Rights Reserved - Powered by <a target="_blank" href="https://karaf.apache.org">Apache Karaf</a><br/>
       Apache Karaf, Apache Mahout, Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
     </footer>
 
